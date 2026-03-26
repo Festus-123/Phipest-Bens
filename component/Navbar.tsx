@@ -19,8 +19,8 @@ const Navbar = () => {
 
     const links = [
         {name: "Home", href: "/", },
-        {name: "About C.E.O", href: "", },
-        {name: "About Firm", href: "", },
+        {name: "About_C.E.O", href: "", },
+        {name: "About_Firm", href: "", },
         {name: "Services", href: "", },
         {name: "Industries", href: "", },
         {name: "Projects", href: "", },
@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <div
         ref={containerRef} 
-        className="sticky top-0 z-50 bg-white w-full p-4 flex justify-between items-center text-sm md:text-lg">
+        className="sticky top-0 z-50 bg-white w-full p-4 flex justify-between items-center text-sm md:text-lg nav-scroll">
         <div className="flex flex-row items-center gap-5 max-w-[70%] md:max-w-full overflow-x-auto md:overflow-x-hidden">
         { links.map((item, index) => (
                 <Link

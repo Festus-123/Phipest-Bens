@@ -24,21 +24,13 @@ const Landing_Page = () => {
     "url(/hero_img6.jpg)",
   ];
   const handleChange = () => {
-    let increase = count
-
-    if(count >= 0){
-        increase++
-        setCount(increase)
-    }
-    if(count === 4){
-        setCount(0)
-    }
-    
-    // return () => setCount(increase)
+    setCount((prev) => (prev + 1) % bg_img.length)
   }
 
   useEffect(() => {
-    setInterval(handleChange, 9000)
+    const interval = setInterval(handleChange, 9000)
+
+    return () => clearInterval(interval)
   }, [count])
 
   useEffect(() => {
@@ -75,8 +67,7 @@ const Landing_Page = () => {
     <div>
       {/* Hero Section */}
       <div className="relative w-full h-screen bg-cover text-white/90 flex flex-col justify-evenly">
-      {/* <Slider className="relative border border-white inset-0"  {...settings}> */}
-        {/* {bg_img.map((item, index) => ( */}
+   
             <div
               ref={bgRef}
               style={{
@@ -86,8 +77,7 @@ const Landing_Page = () => {
               }}
               className="bg-cover bg-fixed inset-0 absolute w-full h-full"
             />
-        {/* ))} */}
-        {/* </Slider> */}
+       
 
         <div className="bg-black/80 inset-0 absolute" />
 
@@ -103,7 +93,7 @@ const Landing_Page = () => {
             globe
           </span>
 
-          <div className="flex flex-col md:flex-row items-center gap-10 md:place-self-end">
+          <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10 md:place-self-end">
             <button className="py-2 px-8 mdpx-4 rounded-xl bg-white/90 border border-white/90 text-amber-950 font-medium cursor-pointer">
               Request a partnership
             </button>
