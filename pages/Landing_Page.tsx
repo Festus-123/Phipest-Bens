@@ -93,17 +93,17 @@ const Landing_Page = () => {
 
         <h1
           ref={textRef}
-          className="relative text-5xl md:text-6xl font-extrabold text- whitespace-pre-line px-8 md:px-16"
+          className="relative text-4xl md:text-5xl lg:text-6xl font-extrabold text- whitespace-pre-line px-8 md:px-16"
         ></h1>
         <div className="relative flex flex-col gap-20 items-center px-8 md:px-16">
-          <span className="font-light md:font-extralight text-lg md:twxt-2xl tracking-wider">
+          <span className="font-light md:font-extralight text-sm md:twxt-2xl tracking-wider">
             Phipest Bens Int Nig Ltd Founded by Phillip oluwole Oladosu is a
             company that stands for trust an reliability, Providing Multi-factor
             services to variaous places accross the country and throughout the
             globe
           </span>
 
-          <div className="flex items-center gap-10 place-self-end">
+          <div className="flex flex-col md:flex-row items-center gap-10 md:place-self-end">
             <button className="py-2 px-8 mdpx-4 rounded-xl bg-white/90 border border-white/90 text-amber-950 font-medium cursor-pointer">
               Request a partnership
             </button>

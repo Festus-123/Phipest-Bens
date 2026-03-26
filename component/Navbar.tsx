@@ -30,8 +30,8 @@ const Navbar = () => {
   return (
     <div
         ref={containerRef} 
-        className="sticky top-0 z-50 bg-white w-full p-4 flex justify-between items-center">
-        <div className="flex flex-row items-center gap-5 max-w-[80%] md:max-w-full overflow-x-auto md:overflow-x-hidden">
+        className="sticky top-0 z-50 bg-white w-full p-4 flex justify-between items-center text-sm md:text-lg">
+        <div className="flex flex-row items-center gap-5 max-w-[70%] md:max-w-full overflow-x-auto md:overflow-x-hidden">
         { links.map((item, index) => (
                 <Link
                 className={`text-amber-950 font-medium ${pathname === item.href && "border-b-2 border-red-700"}`}
@@ -42,7 +42,7 @@ const Navbar = () => {
         ))}
         </div>
 
-        <button className=" cursor-pointer bg-linear-to-r from-amber-950 hover:from-amber-900 to-amber-700 text-white font-bold  py-2 px-8 rounded-xl">
+        <button className="cursor-pointer bg-linear-to-r from-amber-950 hover:from-amber-900 to-amber-700 text-white font-bold py-1 px-4 md:py-2 md:px-8 rounded-xl">
             Contact Us
         </button>
     </div>
