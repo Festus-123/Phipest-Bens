@@ -1,10 +1,9 @@
-import Landing_Page from "@/pages/Landing_Page";
-import Navbar from "@/component/Navbar"
+import Hero from "@/pages/Landing_Page";
 
 const page = () => {
   return (
     <div>
-      <Landing_Page />
+      <Hero />
     </div>
   );
 }

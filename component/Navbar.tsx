@@ -19,7 +19,7 @@ const Navbar = () => {
 
     const links = [
         {name: "Home", href: "/", },
-        {name: "About_C.E.O", href: "", },
+        {name: "About_C.E.O", href: "/about_ceo", },
         {name: "About_Firm", href: "", },
         {name: "Services", href: "", },
         {name: "Industries", href: "", },
