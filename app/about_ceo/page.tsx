@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <div className="bg-linear-to-r from-amber-950 to-amber-700 w-full text-white/90 flex flex-col items-center">
-      <div className="flex flex-col-reverse gap-10 md:gap-10 md:flex-row items-center justify-between p-8 md:p-16">
+    <div className="">
+      <div className="bg-linear-to-r from-amber-950 to-amber-700 text-white/90 flex flex-col-reverse gap-10 md:gap-10 md:flex-row items-center justify-between p-8 md:p-16">
         <div className="flex flex-col gap-5 w-full md:w-[60%]">
           <h1 className="font-bold text-xl md:text-3xl text-center md:text-left">
             C.E.O - Phillip Oluwole Oladosu
@@ -26,7 +26,7 @@ const page = () => {
           />
         </div>
       </div>
-      <div className="bg-amber-50 h-screen w-full md:w-[95%]">
+      <div className="h-screen">
 
       </div>
     </div>

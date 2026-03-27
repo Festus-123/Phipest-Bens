@@ -3,33 +3,33 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { M_PLUS_1 } from "next/font/google";
+// import { M_PLUS_1 } from "next/font/google";
 
 gsap.registerPlugin(TextPlugin);
 
 const Hero = () => {
-  const [count, setCount] = useState(0);
+//   const [count, setCount] = useState(0);
   const textRef = useRef(null);
   const bgRef = useRef(null);
 
-  const bg_img = [
-    "url(/hero_img2.avif)",
-    "url(/hero_img3.avif)",
-    "url(/hero_img4.avif)",
-    "url(/hero_img6.avif)",
-  ];
-  const handleChange = () => {
-    setCount((prev) => (prev + 1) % bg_img.length);
-  };
+//   const bg_img = [
+//     "url(/hero_img2.avif)",
+//     "url(/hero_img3.avif)",
+//     "url(/hero_img4.avif)",
+//     "url(/hero_img6.avif)",
+//   ];
+  //   const handleChange = () => {
+  //     setCount((prev) => (prev + 1) % bg_img.length);
+  //   };
 
-  useEffect(() => {
-    const interval = setInterval(handleChange, 9000);
+  //   useEffect(() => {
+  //     const interval = setInterval(handleChange, 9000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //     return () => clearInterval(interval);
+  //   }, []);
 
   useEffect(() => {
     gsap.fromTo(
@@ -45,7 +45,7 @@ const Hero = () => {
         text: `PHIPEST BENS <br /> INTERNATIONAL NIG LTD.`,
         ease: "power1.inOut",
         repeat: Infinity,
-        repeatDelay: 20,
+        repeatDelay: 30,
       },
     );
 
@@ -60,23 +60,24 @@ const Hero = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesTohow: 1,
+    slidesToShow: 1,
     slidesToScroll: 1,
   };
 
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative w-full h-screen text-white/90 flex flex-col justify-center px-8 md:px-16">
-        <div
-          ref={bgRef}
-          style={{
-            backgroundImage: bg_img[count],
-            backgroundRepeat: "no-repeat",
-            backgroundAttachment: "",
-          }}
-          className="bg-cover inset-0 absolute w-full h-full"
-        />
+      <div className="relative flex-1 h-screen text-white/90 flex flex-col justify-center px-8 md:px-16">
+            <div
+              ref={bgRef}
+              style={{
+                backgroundImage: "url(/hero_img2.avif)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+              }}
+              className="w-full h-full absolute inset-0"
+            />
 
         <div className="bg-black/90 inset-0 absolute" />
 
