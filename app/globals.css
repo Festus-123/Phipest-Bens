@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .nav-scroll::-webkit-scrollbar {
   display: none;
 }
 
 body {
   font-family: sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }

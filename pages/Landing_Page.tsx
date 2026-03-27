@@ -11,16 +11,16 @@ import "slick-carousel/slick/slick-theme.css";
 gsap.registerPlugin(TextPlugin);
 
 const Hero = () => {
-//   const [count, setCount] = useState(0);
+  //   const [count, setCount] = useState(0);
   const textRef = useRef(null);
   const bgRef = useRef(null);
 
-//   const bg_img = [
-//     "url(/hero_img2.avif)",
-//     "url(/hero_img3.avif)",
-//     "url(/hero_img4.avif)",
-//     "url(/hero_img6.avif)",
-//   ];
+  //   const bg_img = [
+  //     "url(/hero_img2.avif)",
+  //     "url(/hero_img3.avif)",
+  //     "url(/hero_img4.avif)",
+  //     "url(/hero_img6.avif)",
+  //   ];
   //   const handleChange = () => {
   //     setCount((prev) => (prev + 1) % bg_img.length);
   //   };
@@ -67,17 +67,17 @@ const Hero = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative flex-1 h-screen text-white/90 flex flex-col justify-center px-8 md:px-16">
-            <div
-              ref={bgRef}
-              style={{
-                backgroundImage: "url(/hero_img2.avif)",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
-              className="w-full h-full absolute inset-0"
-            />
+      <div className="relative flex-1 h-[90vh] text-white/90 flex flex-col justify-center px-8 md:px-16">
+        <div
+          ref={bgRef}
+          style={{
+            backgroundImage: "url(/hero_img2.avif)",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+          className="w-full h-full absolute inset-0"
+        />
 
         <div className="bg-black/90 inset-0 absolute" />
 
@@ -104,7 +104,7 @@ const Hero = () => {
                 Request a partnership
               </button>
               <button className="py-2 px-8 mdpx-4 rounded-xl border border-white text-white font-medium cursor-pointer">
-                Contact Info
+                <a href="#contact-info">Contact Info</a>
               </button>
             </div>
           </div>
