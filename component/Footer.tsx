@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { IconType } from "react-icons";
-import { FiFacebook, FiLinkedin, FiMail, FiX } from "react-icons/fi";
+import { FiFacebook, FiLinkedin, FiMail } from "react-icons/fi";
 import { SiX } from "react-icons/si";
 
 export type CONTACTTYPE = {
@@ -35,7 +35,7 @@ const Footer = () => {
   return (
     <footer className="relative bg-linear-to-r from-amber-950 to-amber-900 text-white/80 p-8 lg:p-12">
       <div className="absolute inset-0 w-full h-full bg-black/60" />
-      <div className="relative flex flex-row flex-wrap gap-5 items-end justify-between mb-10 font-light text-lg">
+      <div className="relative flex flex-row md:flex-wrap gap-10 items-end justify-between mb-10 font-light text-lg overflow-x-auto nav-scroll">
         <aside className="flex flex-col gap-3">
           <h1 className="font- text-xl md:text-2xl">
             PHIPEST BENS <br /> INTERNATIONAL NIGERIA LIMITED.
@@ -74,7 +74,7 @@ const Footer = () => {
       </div>
 
       <div className="relative border-t p-4 md:p-8 lg:p-12 flex flex-col items-center gap-2">
-        <p>&copy;2013 Phipest Bens Int Nig Ltd All rigths reserved</p>
+        <p className="text-center">&copy;2013 Phipest Bens Int Nig Ltd All rigths reserved</p>
         {/* <p>Founded by Phillip Oluwole Oladosu C.E.O-current</p> */}
         <div className="flex items-center gap-4 underline text-xs md:text-sm">
           <a>Terms of Service</a>

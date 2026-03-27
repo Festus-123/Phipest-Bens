@@ -54,7 +54,7 @@ const Overview = () => {
         <h1 className="text-xl md:text-3xl border-b border-gray-300 pb-2 mb-2">
           Our Mission
         </h1>
-        <p className="text-lg md:text-2xl tracking-wider">
+        <p className=" md:text-2xl tracking-wider text-justify">
           At Phipest Bens International Nigeria Ltd, our mission is to build
           bridges of trust through excellence. We exist to deliver reliable
           solutions across construction, trade, logistics, and government
@@ -69,7 +69,7 @@ const Overview = () => {
         <h1 className="text-xl md:text-3xl border-b border-gray-300 pb-2 mb-2">
           Our Vision
         </h1>
-        <p className="text-lg md:text-2xl tracking-wider">
+        <p className=" md:text-2xl tracking-wider text-justify">
           We envision a future where Phipest Bens International Nigeria Ltd is a
           global leader in multi‑sector services, recognized for transforming
           challenges into opportunities. Our vision is to expand beyond borders,

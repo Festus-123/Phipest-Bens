@@ -26,7 +26,7 @@ const page = () => {
           />
         </div>
       </div>
-      <div className="h-screen p-4 md:p-8 flex flex-col gap-4">
+      <div className="h-full p-4 md:p-8 flex flex-col gap-4">
 
         {/*  */}
         <div className="rounded-xl bg-amber-950/5 flex flex-col gap-2 text-amber-950 text-lg md:text-xl p-4 md:p-8">
