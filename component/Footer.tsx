@@ -35,7 +35,7 @@ const Footer = () => {
   return (
     <footer className="relative bg-linear-to-r from-amber-950 to-amber-900 text-white/80 p-8 lg:p-12">
       <div className="absolute inset-0 w-full h-full bg-black/60" />
-      <div className="relative flex flex-row md:flex-wrap gap-10 items-end justify-between mb-10 font-light text-lg overflow-x-auto nav-scroll">
+      <div className="relative flex flex-row flex-wrap gap-15 md:gap-5 items-enstart justify-between mb-10 font-light text-sm">
         <aside className="flex flex-col gap-3">
           <h1 className="font- text-xl md:text-2xl">
             PHIPEST BENS <br /> INTERNATIONAL NIGERIA LIMITED.
@@ -44,7 +44,7 @@ const Footer = () => {
           <p className="font-medium">Statement</p>
           <p>
             {" "}
-            Building trust through reliable multi‑sector services, <br /> shaping
+            Building trust through reliable multi‑sector services, shaping <br />
             industries and communities worldwide.
           </p>
           <p>Family leadership role</p>
@@ -62,8 +62,7 @@ const Footer = () => {
           <p>t.me/Phipest Bens Int Nig Ltd.</p>
           <p>Direct: --- --- </p>
         </aside>
-        <aside className="flex flex-col gap-3">
-          <h1></h1>
+        <aside className="hidden md:flex flex-col gap-3">
           <p>About_CEO</p>
           <p>About_Firm</p>
           <p>Services</p>

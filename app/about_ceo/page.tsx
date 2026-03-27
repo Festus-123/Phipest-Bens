@@ -18,10 +18,10 @@ const page = () => {
 
         <div className="bg-white p-2 drop-shadow-lg">
           <Image
-            src="/ceo_img.jpg"
+            src="/ceo.png"
             alt="The C.E.O"
             width={402}
-            height={602}
+            height={502}
             className="rounded-tr-4xl rounded-bl-4xl"
           />
         </div>
