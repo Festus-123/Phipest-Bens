@@ -21,9 +21,9 @@ const Navbar = () => {
         {name: "Home", href: "/", },
         {name: "About_C.E.O", href: "/about_ceo", },
         {name: "About_Firm", href: "", },
-        {name: "Services", href: "", },
+        {name: "Services", href: "/services", },
         {name: "Industries", href: "", },
-        {name: "Projects", href: "", },
+        {name: "Projects", href: "/projects", },
         {name: "Events", href: "", },
         {name: "News", href: "", },
     ]
