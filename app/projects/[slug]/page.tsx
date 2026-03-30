@@ -67,7 +67,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           )}
 
           <div
-            className={`flex flex-row gap-1 items-center ${!next && "absolute left-10 md:left-1/2 "} ${!prev && "absolute right-10 md:left-1/2"}`}
+            className={`flex flex-row gap-1 items-center ${!next && "absolute right-10 md:left-1/2 "} ${!prev && "absolute left-10 md:left-1/2"}`}
           >
             {projects.map((e, i) => (
               <Link
