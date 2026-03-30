@@ -40,7 +40,7 @@ const page = () => {
               <span className="italic  rounded-xl text-xs w-auto font-light">
                 Service Type: {project.serviceType}
               </span>
-            <Link href={`/projects/${project.slug}`} className="bg-linear-to-r from-blue-400 to-blue-500 text-white/90 rounded-xl p-2 w-50 text-center place-self-end hover:from-blue-950">
+            <Link href={`/projects/${project.slug}`} className="bg-linear-to-r from-blue-400 to-blue-500 text-white/90 rounded-xl p-2 w-50 text-center place-self-end hover:from-blue-950 mt-10">
                 View project
             </Link>
             </div>
