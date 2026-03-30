@@ -14,6 +14,10 @@ export type SERVICES = {
   name: string;
   icon: IconType;
 };
+export type REASONS = {
+  title: string;
+  description: string;
+}
 
 export const services: SERVICES[] = [
   {
@@ -46,10 +50,39 @@ export const services: SERVICES[] = [
   },
 ];
 
+export const reasons: REASONS[] = [
+  {
+    title: "Unmatched Reliability",
+    description: "Experience the power of reliability with us, where every promise is a commitment fulfilled."
+  },
+  {
+    title: "Diverse Expertise",
+    description: "Our diverse expertise is your competitive edge, delivering tailored solutions across industries with precision and innovation."
+  },
+  {
+    title: "Global Reach, Local Touch",
+    description: "Experience the best of both worlds with our global reach and local touch, delivering tailored solutions that resonate with your unique needs."
+  },
+  {
+    title: "Sustainable Solutions",
+    description: "Choose us for sustainable solutions that not only meet your needs but also contribute to a greener, more responsible future."
+  },
+  {
+    title: "Proven Track Record",
+    description: "Join a legacy of success with our proven track record, where every project is a testament to our commitment to excellence and client satisfaction."
+  },
+  {
+    title: "Customer-Centric Approach",
+    description: "Experience the difference with our customer-centric approach, where your needs and satisfaction are at the heart of everything we do."
+  }
+
+]
+
 const Overview = () => {
   return (
-    <div className="relative p-8 md:p-16">
+    <div className="relative ">
       {/* Short About Mission  */}
+      <div className="bg-white p-8 md:p-16">
       <div className="">
         <h1 className="text-xl md:text-3xl border-b border-gray-300 pb-2 mb-2">
           Our Mission
@@ -97,6 +130,28 @@ const Overview = () => {
             );
           })}
         </div>
+      </div>
+      </div>
+
+      <div className="bg-transparent text-white/90 p-8 md:p-16">
+        <h1 className="text-2xl md:text-3xl font-semibold text-center">
+          Why Choose Phipest Bens?
+        </h1>
+        {/* Reasons container */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-8 md:p-16">
+            { reasons.map((item, index) => (
+              <div
+                key={index}
+                className="border-l-8 border-blue-900 p-4 flex flex-col gap-2 bg-white/5 backdrop-blur-lg">
+                  <h1 className="text-xl md:text-2xl ">
+                    {item.title}
+                  </h1>
+                  <p className="font-extralight tracking-wider text-sm md:text-base text-justify">
+                    {item.description}
+                  </p>
+              </div>
+            ))}
+          </div>
       </div>
     </div>
   );

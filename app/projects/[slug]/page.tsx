@@ -36,8 +36,20 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               {project.name}
             </h1>
             <p className="text-gray-600 text-lg md:text-xl">
-              {project.description}
+              {project.longDescription}
             </p>
+          </div>
+
+          <div>
+            { project.details && (
+                <ul className="list-disc list-inside text-gray-600 px-4 md:px-16">
+                  {project.details.map((detail, index) => (
+                    <li key={index} className="mb-2">
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+            )}
           </div>
 
         </section>
