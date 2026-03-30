@@ -122,7 +122,7 @@ const Overview = () => {
             return (
               <div
                 key={index}
-                className={`rounded-xl p-4 md:p-8 flex flex-col items-center gap-4 bg-amber-950/5 drop-shadow-md font-bold text-amber-950 text-sm md:text-xl ${item.name === "Goverment Contracts" && "col-span-2 md:col-span-3"}`}
+                className={`rounded-xl p-4 md:p-8 flex flex-col items-center gap-4 bg-blue-950/10 drop-shadow-md font-bold text-sm md:text-xl ${item.name === "Goverment Contracts" && "col-span-2 md:col-span-3"}`}
               >
                 <Icon className="text-xl md:text-4xl" />
                 <p className="text-center">{item.name}</p>
@@ -138,7 +138,7 @@ const Overview = () => {
           Why Choose Phipest Bens?
         </h1>
         {/* Reasons container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-8 md:p-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
             { reasons.map((item, index) => (
               <div
                 key={index}

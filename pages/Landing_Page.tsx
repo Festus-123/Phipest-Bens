@@ -72,7 +72,7 @@ const Hero = () => {
         <div className="flex flex-col gap-10 items-center">
           <h1
             ref={textRef}
-            className="relative text-3xl md:text-5xl lg:text-6xl font-extrabold text-center"
+            className="relative text-2xl md:text-4xl lg:text-6xl font-extrabold text-center"
           ></h1>
 
           <div className="relative text-sm md:text-xl font-bold bg-white/10 backdrop-blur-sm rounded-xl p-2 w-full md:w-[50%] text-center">

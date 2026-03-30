@@ -55,7 +55,8 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             )}
           </div>
         </section>
-        <div className="w-full flex flex-row items-center justify-between px-4 py-2 md:py-8 md:px-16">
+        
+        <div className="w-full flex flex-row items-center justify-between px-4 py-8 md:py-8 md:px-16 ">
           {prev && (
             <Link
               href={`/projects/${prev.slug}`}
@@ -66,13 +67,13 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           )}
 
           <div
-            className={`flex flex-row gap-1 items-center ${!next && "absolute left-1/2 "} ${!prev && "absolute left-1/2"}`}
+            className={`flex flex-row gap-1 items-center ${!next && "absolute left-10 md:left-1/2 "} ${!prev && "absolute right-10 md:left-1/2"}`}
           >
             {projects.map((e, i) => (
               <Link
                 href={`/projects/${e.slug}`}
                 key={i}
-                className={`w-2 h-2 rounded-full bg-white/60 ${e.slug === slug && "bg-white w-8 "} ${e.slug !== slug && "hover:bg-white/90"} `}
+                className={`w-1 h-1 md:w-2 md:h-2 rounded-full bg-white/60 ${e.slug === slug && "bg-white w-6 md:w-8 "} ${e.slug !== slug && "hover:bg-white/90"} `}
               ></Link>
             ))}
           </div>

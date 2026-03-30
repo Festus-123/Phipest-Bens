@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className="">
       <div className="bg-linear-to-r from-blue-700 to-blue-800 text-white/90 flex flex-col-reverse gap-10 md:gap-10 md:flex-row items-center justify-between p-8 md:p-16">
-        <div className="flex flex-col gap-5 w-full md:w-[60%]">
+        <div className="flex flex-col gap-5 w-full md:w-[60%] items-center md:items-start">
           <h1 className="font-bold text-xl md:text-3xl text-center md:text-left">
             C.E.O - Phillip Oluwole Oladosu
           </h1>
@@ -44,10 +44,11 @@ const page = () => {
           />
         </div>
       </div>
+
       <div className="h-full p-4 md:p-8 flex flex-col gap-4">
         {/*  */}
-        <div className="rounded-xl bg-blue-950/5 flex flex-col gap-2 text-amber-950 p-4 md:p-8">
-          <h1 className="text-xl md:text-2xl text-amber-950 font-bold">
+        <div className="rounded-xl bg-blue-950/5 flex flex-col gap-2 p-4 md:p-8">
+          <h1 className="text-xl md:text-2xl font-bold">
             Juniour School Days
           </h1>
           <p className="text-justify leading-relaxed">
@@ -70,8 +71,8 @@ const page = () => {
           </p>
         </div>
         {/*  */}
-        <div className="rounded-xl  bg-blue-950/5 flex flex-col gap-2 text-amber-950 p-4 md:p-8">
-          <h1 className="text-xl md:text-2xl text-amber-950 font-bold">
+        <div className="rounded-xl  bg-blue-950/5 flex flex-col gap-2 p-4 md:p-8">
+          <h1 className="text-xl md:text-2xl font-bold">
             Higher institution
           </h1>
           <p className="text-justify leading-relaxed">
