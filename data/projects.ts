@@ -1,7 +1,7 @@
 
 export type PROJECTS = {
     slug: string;
-    id?: number
+    id: number
     name: string;
     image: string;
     description: string;
@@ -221,7 +221,7 @@ export const projects: PROJECTS[] = [
         id: 13,
         slug: "car-sales-business",
         name: "Car Sales Business",
-        image: "/project13.jpg",
+        image: "/project15.jpg",
         description: "Buying and selling of cars, including new and used vehicles, with a focus on providing high-quality customer service and competitive pricing.",
         longDescription: "This project involved the operation of a car sales business, focusing on providing high-quality customer service and competitive pricing for both new and used vehicles.",
         details: [

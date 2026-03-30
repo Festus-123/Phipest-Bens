@@ -33,8 +33,8 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="relative bg-linear-to-r from-blue-950 to-blue-500 text-white/80 p-8 lg:p-12">
-      <div className="absolute inset-0 w-full h-full bg-black/60" />
+    <footer className="relative bg-linear-to-r from-blue-900/90 to-blue-950/90 text-white/80 p-8 lg:p-12">
+      {/* <div className="absolute inset-0 w-full h-full bg-black/60" /> */}
       <div className="relative flex flex-row flex-wrap gap-15 md:gap-5 items-enstart justify-between mb-10 font-light text-sm">
         <aside className="flex flex-col gap-3">
           <h1 className="font- text-xl md:text-2xl">

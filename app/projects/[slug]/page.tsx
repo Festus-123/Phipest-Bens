@@ -20,8 +20,11 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <div>
       <div className="bg-black/90 relative">
-      <Link href="/projects" className="absolute bg-black/40 text-white/90 text-lg md:text-xl p-1 md:p-2  top-4 left-3 rounded-full">
-          <FiArrowLeft className=""/>
+        <Link
+          href="/projects"
+          className="absolute bg-black/40 text-white/90 text-lg md:text-xl p-1 md:p-2  top-4 left-3 rounded-full"
+        >
+          <FiArrowLeft className="" />
         </Link>
         <section className="flex flex-col gap-4">
           <Image
@@ -41,31 +44,48 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </div>
 
           <div>
-            { project.details && (
-                <ul className="list-disc list-inside text-gray-600 px-4 md:px-16">
-                  {project.details.map((detail, index) => (
-                    <li key={index} className="mb-2">
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
+            {project.details && (
+              <ul className="list-disc list-inside text-gray-600 px-4 md:px-16">
+                {project.details.map((detail, index) => (
+                  <li key={index} className="mb-2">
+                    {detail}
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
-
         </section>
-          <div className="w-full flex flex-row items-center justify-between px-4 py-2 md:py-8 md:px-16"> 
-            { prev && (
-                <Link href={`/projects/${prev.slug}`} className="bg-white/40 p-2 rounded-full text-lg md:text-xl">
-                    <FiArrowLeft className=""/> 
-                </Link>
-            )}
+        <div className="w-full flex flex-row items-center justify-between px-4 py-2 md:py-8 md:px-16">
+          {prev && (
+            <Link
+              href={`/projects/${prev.slug}`}
+              className="text-white text-xl md:text-2xl"
+            >
+              <FiArrowLeft className="" />
+            </Link>
+          )}
 
-            { next && (
-                <Link href={`/projects/${next.slug}`} className={`bg-white/40 p-2 rounded-full text-lg md:text-xl ${!prev && "absolute right-10"}`}>
-                    <FiArrowRight className=""/>
-                </Link>
-            )}
+          <div
+            className={`flex flex-row gap-1 items-center ${!next && "absolute left-1/2 "} ${!prev && "absolute left-1/2"}`}
+          >
+            {projects.map((e, i) => (
+              <Link
+                href={`/projects/${e.slug}`}
+                key={i}
+                className={`w-2 h-2 rounded-full bg-white/60 ${e.slug === slug && "bg-white w-8 "} ${e.slug !== slug && "hover:bg-white/90"} `}
+              ></Link>
+            ))}
           </div>
+
+          {next && (
+            <Link
+              href={`/projects/${next.slug}`}
+              className={`text-xl md:text-2xl text-white ${!prev && "absolute right-10"}`}
+            >
+              <FiArrowRight className="" />
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

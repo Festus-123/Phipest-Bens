@@ -8,7 +8,7 @@ const page = () => {
     // Display Projects here
     <div>
         <section>
-        <div className="p-8 md:p-16 bg-linear-to-r from-blue-950 to-blue-500 text-white">
+        <div className="p-8 md:p-16 bg-linear-to-r from-blue-700 to-blue-800 text-white">
             <h1 className="text-4xl md:text-7xl text-center md:text-left font-extrabold">
                 Projects
             </h1>

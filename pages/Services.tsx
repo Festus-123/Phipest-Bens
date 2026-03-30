@@ -6,7 +6,7 @@ const Services = () => {
     return (
         <div className=''>
 
-            <h1 className='font-bold text-xl md:text-3xl text-amber-950 p-4 md:p-16'>
+            <h1 className='font-bold text-xl md:text-3xl p-4 md:p-16'>
                 Our Services
             </h1>
 

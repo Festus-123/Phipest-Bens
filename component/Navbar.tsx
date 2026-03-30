@@ -24,7 +24,7 @@ const Navbar = () => {
         {name: "Services", href: "/services", },
         {name: "Industries", href: "", },
         {name: "Projects", href: "/projects", },
-        {name: "Events", href: "", },
+        {name: "Events", href: "/events", },
         {name: "News", href: "", },
     ]
   return (
@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="flex flex-row items-center gap-5 max-w-[70%] md:max-w-full overflow-x-auto md:overflow-x-hidden nav-scroll">
         { links.map((item, index) => (
                 <Link
-                className={`text-amber-950 font-medium ${pathname === item.href && "border-b-2 border-blue-950"}`}
+                className={` font-medium ${pathname === item.href && "border-b-2 border-blue-950"}`}
                 key={index}
                 href={item.href}>
                     {item.name}
@@ -42,7 +42,7 @@ const Navbar = () => {
         ))}
         </div>
 
-        <button className="cursor-pointer bg-linear-to-r from-blue-950 hover:from-blue-900 to-blue-500 text-white font-bold py-1 px-4 md:py-2 md:px-8 rounded-xl">
+        <button className="cursor-pointer bg-linear-to-r from-blue-400 hover:from-blue-800 to-blue-500 text-white font-bold py-1 px-4 md:py-2 md:px-8 rounded-xl">
             Contact Us
         </button>
     </div>

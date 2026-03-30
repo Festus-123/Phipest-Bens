@@ -142,7 +142,7 @@ const Overview = () => {
             { reasons.map((item, index) => (
               <div
                 key={index}
-                className="border-l-8 border-blue-900 p-4 flex flex-col gap-2 bg-white/5 backdrop-blur-lg">
+                className="border-l-8 border-blue-900 w-full p-4 flex flex-col gap-2 bg-white/5 backdrop-blur-lg">
                   <h1 className="text-xl md:text-2xl ">
                     {item.title}
                   </h1>

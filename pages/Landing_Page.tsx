@@ -75,17 +75,23 @@ const Hero = () => {
             className="relative text-3xl md:text-5xl lg:text-6xl font-extrabold text-center"
           ></h1>
 
-          <div className="relative text-lg md:text-xl font-bold bg-white/10 backdrop-blur-md rounded-xl p-2 w-full md:w-[50%] text-center">
+          <div className="relative text-sm md:text-xl font-bold bg-white/10 backdrop-blur-sm rounded-xl p-2 w-full md:w-[50%] text-center">
             YOUR PARTNER IN PROGRESS
           </div>
           <div className="relative flex flex-col gap-20 items-center ">
-
+            {/* <span className="font-extralight tracking-wider text-sm md:text-sm w-full md:w-[60%] text-justify">
+              Phipest Bens International Nigeria Ltd, founded by Phillip Oluwole
+              Oladosu, is a diversified enterprise built on trust and
+              reliability. We deliver excellence across multiple sectors — from
+              construction contracts and wholesale/retail trade to import-export
+              services and government partnerships.
+            </span> */}
 
             <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10">
-              <button className="py-2 px-8 mdpx-4 rounded-xl bg-white/90 border border-white/90 text-amber-950 font-medium cursor-pointer">
+              <button className="py-2 px-8 mdpx-4 rounded-xl bg-white/90  text-amber-950 font-medium cursor-pointer">
                 Request a partnership
               </button>
-              <button className="py-2 px-8 mdpx-4 rounded-xl border border-white text-white font-medium cursor-pointer">
+              <button className="py-2 px-8 mdpx-4 rounded-xl bg-linear-to-r from-blue-400 to-blue-500 text-white font-medium cursor-pointer">
                 <a href="#contact-info">Contact Info</a>
               </button>
             </div>

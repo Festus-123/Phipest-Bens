@@ -5,7 +5,7 @@ import { FiArrowUp, FiArrowUpRight, FiGlobe, FiLinkedin } from "react-icons/fi";
 const page = () => {
   return (
     <div className="">
-      <div className="bg-linear-to-r from-amber-950 to-amber-700 text-white/90 flex flex-col-reverse gap-10 md:gap-10 md:flex-row items-center justify-between p-8 md:p-16">
+      <div className="bg-linear-to-r from-blue-700 to-blue-800 text-white/90 flex flex-col-reverse gap-10 md:gap-10 md:flex-row items-center justify-between p-8 md:p-16">
         <div className="flex flex-col gap-5 w-full md:w-[60%]">
           <h1 className="font-bold text-xl md:text-3xl text-center md:text-left">
             C.E.O - Phillip Oluwole Oladosu
@@ -34,19 +34,19 @@ const page = () => {
           </div>
         </div>
 
-        <div className="bg-white p-2 drop-shadow-lg">
+        <div className="bg-white p-2 drop-shadow-lg rounded-full">
           <Image
             src="/ceo.png"
             alt="The C.E.O"
             width={402}
             height={502}
-            className="rounded-tr-4xl rounded-bl-4xl"
+            className="rounded-full object-cover"
           />
         </div>
       </div>
       <div className="h-full p-4 md:p-8 flex flex-col gap-4">
         {/*  */}
-        <div className="rounded-xl bg-amber-950/5 flex flex-col gap-2 text-amber-950 p-4 md:p-8">
+        <div className="rounded-xl bg-blue-950/5 flex flex-col gap-2 text-amber-950 p-4 md:p-8">
           <h1 className="text-xl md:text-2xl text-amber-950 font-bold">
             Juniour School Days
           </h1>
@@ -70,7 +70,7 @@ const page = () => {
           </p>
         </div>
         {/*  */}
-        <div className="rounded-xl  bg-amber-950/5 flex flex-col gap-2 text-amber-950 p-4 md:p-8">
+        <div className="rounded-xl  bg-blue-950/5 flex flex-col gap-2 text-amber-950 p-4 md:p-8">
           <h1 className="text-xl md:text-2xl text-amber-950 font-bold">
             Higher institution
           </h1>
