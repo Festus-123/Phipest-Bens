@@ -150,6 +150,6 @@ export const events: EVENTS[] = [
         date: "March 8, 2024",
         description: "Join us for an inspiring panel discussion featuring successful women in the tech industry.",
         link: "/events/women-in-tech-panel",
-        category: "completed"git
+        category: "completed"
     }
 ]
