@@ -1,6 +1,60 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUp, FiArrowUpRight, FiGlobe, FiLinkedin } from "react-icons/fi";
+
+export const metadata: Metadata = {
+  title: "Phipest-bens International Nig Ltd - About CEO: https://phipest-bens.vercel.app/about_ceo",
+  description: "Meet Phillip Oluwole Oladosu, the visionary founder and CEO of Phipest-bens International Nig Ltd, leading with trust, reliability, and global ambition.",
+  keywords: [
+    "Phipest-bens CEO",
+    "Phillip Oluwole Oladosu",
+    "founder of Phipest-bens",
+    "company leadership Nigeria",
+    "business leaders Nigeria",
+    "CEO profile Nigeria"
+  ],
+  openGraph: {
+    title: "Phipest-bens International Nig Ltd - About CEO",
+    description: "Discover the story and leadership of Phillip Oluwole Oladosu, CEO of Phipest-bens International Nig Ltd.",
+    url: "https://phipest-bens.vercel.app/about_ceo",
+    siteName: "Phipest-bens International Nig Ltd",
+    images: [
+      {
+        url: "https://phipest-bens.vercel.app/og_ceo.png",
+        width: 1200,
+        height: 630,
+        alt: "Phipest-bens International Nig Ltd CEO Open Graph Image",
+      },
+    ],
+    locale: "en_US",
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Phipest-bens International Nig Ltd - About CEO",
+    description: "Meet Phillip Oluwole Oladosu, the visionary founder and CEO of Phipest-bens International Nig Ltd.",
+    images: [
+      {
+        url: "https://phipest-bens.vercel.app/og_ceo.png",
+        width: 1200,
+        height: 630,
+        alt: "Phipest-bens International Nig Ltd Twitter CEO Card Image",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
+  },
+};
 
 const page = () => {
   return (

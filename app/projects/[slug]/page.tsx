@@ -4,6 +4,10 @@ import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
@@ -16,6 +20,14 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   if (!project) {
     notFound();
   }
+
+    const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <div>
@@ -32,7 +44,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             alt={project.name}
             width={1200}
             height={600}
-            className="w-full h-120 object-cover"
+            className="w-full h-140 object-cover"
           />
           <div className="p-4 md:p-16">
             <h1 className="text-3xl md:text-5xl font-bold text-white/90 mb-4">
