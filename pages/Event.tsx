@@ -23,7 +23,7 @@ const Event = () => {
       </section>
 
       {/* Ongoing Events */}
-      <section className="p-6 md:p-16 bg-white">
+      <section className="p-6 md:p-16">
         <h1 className="text-3xl md:text-5xl font-bold text-gray-800 border-b pb-4 mb-8">
           Ongoing Events
         </h1>
@@ -41,7 +41,7 @@ const Event = () => {
       </section>
 
       {/* Concluded Events */}
-      <section className="p-6 md:p-16 bg-white">
+      <section className="p-6 md:p-16">
         <h1 className="text-3xl md:text-5xl font-bold text-gray-800 border-b pb-4 mb-8">
           Concluded Events
         </h1>

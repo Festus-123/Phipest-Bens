@@ -1,23 +1,26 @@
-
 import { Metadata } from "next";
+import { FaMicroblog } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Phipest-bens International Nig Ltd - About Firm: https://phipest-bens.vercel.app/about_firm",
-  description: "Learn more about Phipest-bens International Nig Ltd, a diversified company built on trust and reliability. We specialize in construction, import/export, wholesale and retail, and government contracts.",
+  title:
+    "Phipest-bens International Nig Ltd - About Firm: https://phipest-bens.vercel.app/about_firm",
+  description:
+    "Learn more about Phipest-bens International Nig Ltd, a diversified company built on trust and reliability. We specialize in construction, import/export, wholesale and retail, and government contracts.",
   keywords: [
-    "Phipest-bens", 
-    "Phipest-bens International Nig Ltd", 
-    "About Phipest-bens", 
-    "Phipest-bens company profile", 
-    "construction company Nigeria", 
-    "import export Nigeria", 
-    "government contracts Nigeria"
+    "Phipest-bens",
+    "Phipest-bens International Nig Ltd",
+    "About Phipest-bens",
+    "Phipest-bens company profile",
+    "construction company Nigeria",
+    "import export Nigeria",
+    "government contracts Nigeria",
   ],
   openGraph: {
     title: "Phipest-bens International Nig Ltd - About Firm",
-    description: "Discover the mission, vision, and values of Phipest-bens International Nig Ltd, a trusted partner in construction, trade, and government contracts.",
+    description:
+      "Discover the mission, vision, and values of Phipest-bens International Nig Ltd, a trusted partner in construction, trade, and government contracts.",
     url: "https://phipest-bens.vercel.app/about_firm",
     siteName: "Phipest-bens International Nig Ltd",
     images: [
@@ -34,7 +37,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Phipest-bens International Nig Ltd - About Firm",
-    description: "Learn more about Phipest-bens International Nig Ltd, a diversified company built on trust and reliability.",
+    description:
+      "Learn more about Phipest-bens International Nig Ltd, a diversified company built on trust and reliability.",
     images: [
       {
         url: "https://phipest-bens.vercel.app/og_about.png",
@@ -66,18 +70,42 @@ const page = () => {
         </h1>
       </div>
 
-    {/* Section for company's history and values */}
-    <section className="p-4 md:p-16 flex flex-col gap-4">
-        <h1 className="font-bold ">PHIPEST BESN INTERNATIONAL NIGERIA LIMITED</h1>
-          <p className="mb-5">
-            Phipest-bens International Nig Ltd is a diversified company with a rich history of excellence and innovation. Founded in [Year], we have grown to become a trusted name in the construction, import/export, wholesale and retail, and government contracting sectors. Our mission is to deliver high-quality services and products while fostering long-term relationships with our clients and partners. We are committed to integrity, reliability, and customer satisfaction in everything we do.
-          </p>
-          {/* Link to checkout company's blog */}
-          <Link href="/blog" className="text-black hover:underline bg-linear-to-r from-blue-400 to-blue-50 p-2 md:p-3 rounded-lg">
-            blog post
-          </Link>
+      {/* Section for company's history and values */}
+      <section className="p-8 md:p-16 flex flex-col gap-4">
+        <h1 className="font-bold ">
+          PHIPEST BESN INTERNATIONAL NIGERIA LIMITED
+        </h1>
+        <p className="mb-5">
+          Phipest-bens International Nig Ltd is a diversified company with a
+          rich history of excellence and innovation. Founded in 2013, we have
+          grown to become a trusted name in the construction, import/export,
+          wholesale and retail, and government contracting sectors. Our mission
+          is to deliver high-quality services and products while fostering
+          long-term relationships with our clients and partners. We are
+          committed to integrity, reliability, and customer satisfaction in
+          everything we do.
+        </p>
+        <div className="bg-gray-100 p-4 rounded-lg">
+        <p className="">
+          Our core values include:
+        </p>
+          <ul className="list-disc list-inside mt-2">
+            <li>Integrity: We conduct our business with honesty and transparency.</li>
+            <li>Reliability: We are committed to delivering on our promises and meeting our deadlines.</li>
+            <li>Customer Satisfaction: We prioritize the needs and expectations of our clients.</li>
+          </ul>
+        </div>
+        {/* Link to checkout company's blog */}
+        <Link
+          href="/blog"
+          className="text-black hover:underline bg-linear-to-r from-blue-400 to-blue-50 p-2 md:p-3 rounded-lg flex items-center gap-4 justify-between w-max"
+        >
+          <span>blog post</span>
+          <span>
+            <FaMicroblog />
+          </span>
+        </Link>
       </section>
-
 
       {/* Section for company's location */}
       <section className="container mx-auto px-4 py-8">
