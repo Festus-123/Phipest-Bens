@@ -48,5 +48,19 @@ export const services: SERVICES[] = [
         title: "Goverment contracts",
         description: "We assist businesses in securing government contracts, providing expertise in proposal development and compliance.",
         imageUrl: "/government_contracts.jpg"
+    },
+    {
+        slug: "Architectural-design",
+        id: 7,
+        title: "Architectural design",
+        description: "Our architectural design services create innovative and functional spaces that meet our clients' needs.",
+        imageUrl: "/architectural_design.jpg"
+    },
+    {
+        slug:"car sales",
+        id: 8,
+        title: "Car sales",
+        description: "We offer a wide selection of vehicles for sale, providing quality and value to our customers.",
+        imageUrl: "/car_sales.jpg"
     }
 ]
