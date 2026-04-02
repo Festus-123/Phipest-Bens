@@ -18,14 +18,27 @@ const poppins = Poppins({
 });
 
 const Overview = () => {
-  const [ number, setNumber] = useState<number[]>([]);
+  const [width, setWidth] = useState<number>(0);
+
+  const [number, setNumber] = useState<number[]>([]);
+
+  useEffect(() => {
+    // Set initial width
+    setWidth(window.innerWidth);
+
+    // Update width on resize
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleArray = () => {
-    for(let i = 0; i <= 40; i++){
-      setNumber((prev) => [...prev, i])
+    for (let i = 0; i <= 40; i++) {
+      setNumber((prev) => [...prev, i]);
     }
-    console.log(number, "number")
-  }
+    console.log(number, "number");
+  };
 
   useEffect(() => {
     // Slide in for "What We Offer"
@@ -73,17 +86,8 @@ const Overview = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 2,
-    breakpoints: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ],
+    slidesToShow: width < 768 ? 1 : 5,
+    slidesToScroll: width < 768 ? 1 : 2,
     autoplay: true,
     autoplaySpeed: 2000,
   };
@@ -91,7 +95,9 @@ const Overview = () => {
   return (
     <div className={`relative bg-white p-8 md:p-16 z-10 ${poppins.className}`}>
       {/* What We Offer */}
-      <section className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-40 p-4 md:p-16">
+      <section
+        className={`flex flex-col-reverse md:flex-row items-center gap-10 md:gap-40 md:p-16 ${width < 768 && "fade-in-section"}`}
+      >
         <div className="left-in w-full md:w-[60%] flex flex-col gap-2 md:gap-4">
           <h1 className="text-2xl md:text-6xl mb-2">What We Offer?</h1>
           <p className="tracking-wider text-justify">
@@ -109,7 +115,7 @@ const Overview = () => {
             Visit page
           </Link>
         </div>
-        <div className="right-in p-4 pb-16 shadow-xl">
+        <div className="right-in p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
           <Image
             width={600}
             height={400}
@@ -121,7 +127,9 @@ const Overview = () => {
       </section>
 
       {/* The Big Picture */}
-      <section className="big-picture-section flex flex-col-reverse md:flex-row-reverse items-center gap-10 md:gap-40 p-4 md:p-16 mt-10">
+      <section
+        className={`big-picture-section flex flex-col-reverse md:flex-row-reverse items-center gap-10 md:gap-40 md:p-16 mt-10 ${width < 760 && "fade-in-section"}`}
+      >
         <div className="right-in w-full md:w-[60%] flex flex-col gap-2 md:gap-4">
           <h1 className="text-2xl md:text-6xl mb-2">The Big Picture ~</h1>
           <p className="tracking-wider text-justify">
@@ -139,7 +147,7 @@ const Overview = () => {
             Visit page
           </Link>
         </div>
-        <div className="left-in p-4 pb-16 shadow-xl">
+        <div className="left-in p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
           <Image
             width={600}
             height={400}
@@ -148,7 +156,7 @@ const Overview = () => {
             className="w-full md:w-auto h-100 object-cover object-center"
           />
         </div>
-      </section> 
+      </section>
 
       {/* Why Choose Section */}
       <section className="mt-20 md:mt-40 fade-in-section">
@@ -157,7 +165,7 @@ const Overview = () => {
         </h1>
         <section className="relative flex flex-col items-center justify-evenly gap-10 md:gp-20 p-4 md:p-16 fade-in-section">
           {/* Decorative badges */}
-          <div className="p-4 mt-10 h-80 md:h-120 w-15 md:w-20 drop-shadow-2xl bg-linear-to-b from-blue-400 to-blue-500 relative text-center">
+          <div className="p-4 mt-10 h-80 md:h-120 w-15 md:w-20 drop-shadow-2xl bg-linear-to-b from-blue-400 to-blue-500 relative text-center text-white">
             <div className="w-50 md:w-70 text-xs md:text-sm p-2 md:p-4 absolute top-5 md:top-10 -left-2 drop-shadow-2xl bg-linear-to-r from-yellow-400 to-yellow-500">
               Unmatched Reliability
             </div>
@@ -175,92 +183,104 @@ const Overview = () => {
             </div>
           </div>
 
-      <div className="grid grid-cols-1 gap-5">
-        <div
-          className={`${poppins.className} md:absolute top-1/4 right-5 md:w-60 flex flex-col gap-1`}
-        >
-          <h3 className="font-extralight text-lg md:text-xl">
-            The Unmatched:
-          </h3>
-          <p className="text-xs text-justify">
-            At Phipest bens we are unmatched due to our capabilities and
-            prove worth we have delivered and ensure smootha dn ffast
-            services renered over the years
-          </p>
-        </div>
-        <div
-          className={`${poppins.className} md:absolute top-1/4 left-5 md:w-50 flex flex-col gap-1`}
-        >
-          <h3 className="font-extralight text-lg md:text-xl">
-            Global reach, Local touch:
-          </h3>
-          <p className="text-xs text-justify">
-            At Phipest bens we are unmatched due to our capabilities and
-            prove worth we have delivered and ensure smootha dn ffast
-            services renered over the years
-          </p>
-        </div>
-        <div
-          className={`${poppins.className} md:absolute bottom-1/4 right-5 md:w-50 flex flex-col gap-1`}
-        >
-          <h3 className="font-extralight text-lg md:text-xl">
-            DIverse Enterprise:
-          </h3>
-          <p className="text-xs text-justify">
-            At Phipest bens we are unmatched due to our capabilities and
-            prove worth we have delivered and ensure smootha dn ffast
-            services renered over the years
-          </p>
-        </div>
-        <div
-          className={`${poppins.className} md:absolute bottom-1/4 left-5 md:w-50 flex flex-col gap-1`}
-        >
-          <h3 className="font-extralight text-lg md:text-xl">
-            Sustainable solutions:
-          </h3>
-          <p className="text-xs text-justify">
-            At Phipest bens we are unmatched due to our capabilities and
-            prove worth we have delivered and ensure smootha dn ffast
-            services renered over the years
-          </p>
-        </div>
-      </div>
-      <div className={`w-full md:w-50 flex flex-col gap-1`}>
-        <h3 className="font-extralight text-lg md:text-xl">
-          Customer-centric Approach:
-        </h3>
-        <p className="text-xs text-justify">
-          At Phipest bens we are unmatched due to our capabilities and prove
-          worth we have delivered and ensure smootha dn ffast services
-          renered over the years
-        </p>
-      </div>
+          <div
+            className={`${poppins.className} md:absolute top-1/4 right-5 md:w-60 hidden md:flex flex-col gap-1`}
+          >
+            <h3 className="font-extralight text-lg md:text-xl">
+              Unmatched Reliability:
+            </h3>
+            <p className="text-xs text-justify">
+              At Phipest bens we are unmatched due to our capabilities and prove
+              worth we have delivered and ensure smootha dn ffast services
+              renered over the years
+            </p>
+          </div>
+          <div
+            className={`${poppins.className} md:absolute top-1/4 left-5 md:w-50 hidden md:flex flex-col gap-1`}
+          >
+            <h3 className="font-extralight text-lg md:text-xl">
+              Global reach, Local touch:
+            </h3>
+            <p className="text-xs text-justify">
+              At Phipest bens we are unmatched due to our capabilities and prove
+              worth we have delivered and ensure smootha dn ffast services
+              renered over the years
+            </p>
+          </div>
+          <div
+            className={`${poppins.className} md:absolute bottom-1/4 right-5 md:w-50 hidden md:flex flex-col gap-1`}
+          >
+            <h3 className="font-extralight text-lg md:text-xl">
+              DIverse Enterprise:
+            </h3>
+            <p className="text-xs text-justify">
+              At Phipest bens we are unmatched due to our capabilities and prove
+              worth we have delivered and ensure smootha dn ffast services
+              renered over the years
+            </p>
+          </div>
+          <div
+            className={`${poppins.className} md:absolute bottom-1/4 left-5 md:w-50 hidden md:flex flex-col gap-1`}
+          >
+            <h3 className="font-extralight text-lg md:text-xl">
+              Sustainable solutions:
+            </h3>
+            <p className="text-xs text-justify">
+              At Phipest bens we are unmatched due to our capabilities and prove
+              worth we have delivered and ensure smootha dn ffast services
+              renered over the years
+            </p>
+          </div>
+          <div className={`w-full md:w-50 hidden md:flex flex-col gap-1`}>
+            <h3 className="font-extralight text-lg md:text-xl">
+              Customer-centric Approach:
+            </h3>
+            <p className="text-xs text-justify">
+              At Phipest bens we are unmatched due to our capabilities and prove
+              worth we have delivered and ensure smootha dn ffast services
+              renered over the years
+            </p>
+          </div>
+
+          {/* Mobile view why choose phipest */}
+          <div className={`md:hidden mt-10 text-justify font-light text-xl`}>
+            At Phipest bens we are unmatched due to our capabilities and prove
+            worth we have delivered and ensure smootha dn ffast services renered
+            over the years
+          </div>
         </section>
 
         {/* Testimonials */}
-      </section> 
+      </section>
 
-        {/* What people say */}
-        <section className="mt-20 md:mt-40 fade-in-section relative flex flex-col items-center justify-evenly gap-10 md:gp-20 p-4 fade-in-section">
-          <h1 className="text-4xl md:text-6xl text-center mb-10"> What people say?</h1>
-          <Slider {...settings} className="w-full left-in gap-10 slick-space ">
-            {
-              number.map((item, index) => (
-            <div key={index} className={` bg-linear-to-b from-blue-200 to-blue-100 p-2 md:p-4 shadow-lg rounded-lg ${item === 0 && "hidden"}`}>
+      {/* What people say */}
+      <section className="mt-20 md:mt-40 fade-in-section relative flex flex-col items-center justify-evenly gap-10 md:gp-20 fade-in-section">
+        <h1 className="text-4xl md:text-6xl text-center mb-10">
+          {" "}
+          What people say?
+        </h1>
+        <Slider
+          {...settings}
+          className="w-full left-in gap-10 slick-space rounded-lg"
+        >
+          {number.map((item, index) => (
+            <div
+              key={index}
+              className={` bg-linear-to-b from-blue-200 to-blue-100 p-2 md:p-4 shadow-lg rounded-lg ${item === 0 && "hidden"}`}
+            >
               <p className="text-sm italic">
-                <span className="mr-2 font-bold inline-block text-xl md:text-3xl">{item}</span>
-                &quot;Phipest Bens transformed our project with their expertise and dedication. A true partner in progress!&quot;
+                <span className="mr-2 font-bold inline-block text-xl md:text-3xl">
+                  {item}
+                </span>
+                &quot;Phipest Bens transformed our project with their expertise
+                and dedication. A true partner in progress!&quot;
               </p>
             </div>
-              ))
-            }
-            </Slider>
-
-        </section>
+          ))}
+        </Slider>
+      </section>
     </div>
   );
 };
 
 export default Overview;
-
-
