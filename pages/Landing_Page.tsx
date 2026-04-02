@@ -78,7 +78,7 @@ const Hero = () => {
       className={`sticky top-10 bg-fixed bg-no-repeat bg-cover bg- ${poppins.className}`}
     >
       {/* Hero Section */}
-      <div className="relative bg-transparent h-[70vh] flex items-center justify-center md:justify-start text-black p-8 md:p-16">
+      <div className="relative bg-transparent h-[75vh] flex items-center justify-center md:justify-start text-black p-8 md:p-16">
         <div className="flex flex-col gap-">
           <h1
             ref={textRef}
@@ -88,7 +88,7 @@ const Hero = () => {
             International Nig Lmtd.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm md:text-base">
-            <button className="hero-btn w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-blue-400 to-blue-500 font-medium cursor-pointer">
+            <button className="hero-btn w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r text-white from-blue-400 to-blue-500 font-medium cursor-pointer">
               Request a partnership
             </button>
             <button className="hero-btn w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10 text-white font-medium cursor-pointer">

@@ -45,7 +45,7 @@ const Overview = () => {
     gsap.from(".left-in", {
       x: "-100%",
       opacity: 0,
-      duration: 3,
+      duration: 2,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".left-in",
@@ -57,7 +57,7 @@ const Overview = () => {
     gsap.from(".right-in", {
       x: "100%",
       opacity: 0,
-      duration: 3,
+      duration: 2,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".right-in",
@@ -96,9 +96,9 @@ const Overview = () => {
     <div className={`relative bg-white p-8 md:p-16 z-10 ${poppins.className}`}>
       {/* What We Offer */}
       <section
-        className={`flex flex-col-reverse md:flex-row items-center gap-10 md:gap-40 md:p-16 ${width < 768 && "fade-in-section"}`}
+        className={`flex flex-col-reverse md:flex-row items-center gap-10 md:gap-40 md:p-16 right-in ${width < 768 ? "mt-10" : "mt-20"}`}
       >
-        <div className="left-in w-full md:w-[60%] flex flex-col gap-2 md:gap-4">
+        <div className="w-full md:w-[60%] flex flex-col gap-2 md:gap-4">
           <h1 className="text-2xl md:text-6xl mb-2">What We Offer?</h1>
           <p className="tracking-wider text-justify">
             At Phipest Bens International Nigeria Ltd, our mission is to build
@@ -115,7 +115,7 @@ const Overview = () => {
             Visit page
           </Link>
         </div>
-        <div className="right-in p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
+        <div className="p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
           <Image
             width={600}
             height={400}
@@ -128,9 +128,9 @@ const Overview = () => {
 
       {/* The Big Picture */}
       <section
-        className={`big-picture-section flex flex-col-reverse md:flex-row-reverse items-center gap-10 md:gap-40 md:p-16 mt-10 ${width < 760 && "fade-in-section"}`}
+        className={`big-picture-section flex flex-col-reverse md:flex-row-reverse items-center gap-10 md:gap-40 md:p-16 mt-10 left-in ${width < 768 ? "mt-10" : "mt-20"}`}
       >
-        <div className="right-in w-full md:w-[60%] flex flex-col gap-2 md:gap-4">
+        <div className="w-full md:w-[60%] flex flex-col gap-2 md:gap-4">
           <h1 className="text-2xl md:text-6xl mb-2">The Big Picture ~</h1>
           <p className="tracking-wider text-justify">
             At Phipest Bens International Nigeria Ltd, our mission is to build
@@ -147,7 +147,7 @@ const Overview = () => {
             Visit page
           </Link>
         </div>
-        <div className="left-in p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
+        <div className="p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
           <Image
             width={600}
             height={400}
