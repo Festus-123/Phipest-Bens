@@ -1,4 +1,5 @@
 "use client";
+import { Inter, Poppins } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -10,26 +11,21 @@ import "slick-carousel/slick/slick-theme.css";
 
 gsap.registerPlugin(TextPlugin);
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["100", "400", "600", "700"], // choose light to bold
+  // variable: "--font-inter",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "400", "600", "700"], // choose light to bold
+  // variable: "--font-inter",
+});
+
 const Hero = () => {
-  //   const [count, setCount] = useState(0);
   const textRef = useRef(null);
   const bgRef = useRef(null);
-
-  //   const bg_img = [
-  //     "url(/hero_img2.avif)",
-  //     "url(/hero_img3.avif)",
-  //     "url(/hero_img4.avif)",
-  //     "url(/hero_img6.avif)",
-  //   ];
-  //   const handleChange = () => {
-  //     setCount((prev) => (prev + 1) % bg_img.length);
-  //   };
-
-  //   useEffect(() => {
-  //     const interval = setInterval(handleChange, 9000);
-
-  //     return () => clearInterval(interval);
-  //   }, []);
 
   useEffect(() => {
     gsap.fromTo(
@@ -42,7 +38,7 @@ const Hero = () => {
       {
         duration: 4,
         delay: 0.5,
-        text: `PHIPEST BENS <br /> INTERNATIONAL NIG LTD.`,
+        text: `PHIPEST- <br /> -BENS `,
         ease: "power1.inOut",
         repeat: Infinity,
         repeatDelay: 30,
@@ -67,34 +63,22 @@ const Hero = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative bg-transparent flex-1 h-[90vh] text-white/90 flex flex-col justify-center px-8 md:px-16">
-
-        <div className="flex flex-col gap-10 items-center">
+      <div className="relative bg-transparent h-[60vh] flex items-center text-white p-8 md:p-16">
+        <div className="flex flex-col gap-">
           <h1
             ref={textRef}
-            className="relative text-2xl md:text-4xl lg:text-6xl font-extrabold text-center"
+            className={`font-light text-2xl md:text-4xl lg:text-8xl ${poppins.className}`}
           ></h1>
-
-          <div className="relative text-sm md:text-xl font-bold bg-white/10 backdrop-blur-sm rounded-xl p-2 w-full md:w-[50%] text-center">
-            YOUR PARTNER IN PROGRESS
-          </div>
-          <div className="relative flex flex-col gap-20 items-center ">
-            {/* <span className="font-extralight tracking-wider text-sm md:text-sm w-full md:w-[60%] text-justify">
-              Phipest Bens International Nigeria Ltd, founded by Phillip Oluwole
-              Oladosu, is a diversified enterprise built on trust and
-              reliability. We deliver excellence across multiple sectors — from
-              construction contracts and wholesale/retail trade to import-export
-              services and government partnerships.
-            </span> */}
-
-            <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10">
-              <button className="py-2 px-8 mdpx-4 rounded-xl bg-white/90  text-amber-950 font-medium cursor-pointer">
-                Request a partnership
-              </button>
-              <button className="py-2 px-8 mdpx-4 rounded-xl bg-linear-to-r from-blue-400 to-blue-500 text-white font-medium cursor-pointer">
-                <a href="#contact-info">Contact Info</a>
-              </button>
-            </div>
+          <p className={`text-lg md:text-xl tracking-widest ${poppins.className}`}>
+            International Nig Lmtd.
+          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+          <button className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-blue-400 to-blue-500 font-medium cursor-pointer">
+            Request a partnership
+          </button>
+          <button className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10 text-white font-medium cursor-pointer">
+            Contact Info
+          </button>
           </div>
         </div>
       </div>
