@@ -104,9 +104,8 @@ const Hero = () => {
       className={`sticky top-10 bg-fixed bg-no-repeat bg-cover bg-center ${poppins.className}`}
     >
       {/* Hero Section */}
-      <div 
-        className=" relative bg-transparent h-[75vh] flex items-center justify-center md:justify-start text-black p-8 md:p-16">
-        <div className="flex flex-col gap-">
+      <div className=" relative bg-transparent h-[75vh] flex items-center justify-center md:justify-start text-black p-8 md:p-12 lg:p-16">
+        <div className="flex flex-col gap- mb-10 md:mb-0">
           <h1
             ref={textRef}
             className="font-light text-center md:text-start text-6xl md:text-7xl lg:text-8xl"
@@ -126,14 +125,14 @@ const Hero = () => {
 
         <div
           ref={illustrationRef}
-          className="absolute -bottom-5 md:-bottom-10 md:right-10 "
+          className="absolute md:-bottom-20 md:right-10 "
         >
           <Image
             src="/illustration3.png"
             alt="Illustration"
             width={600}
             height={600}
-            className="w-100 md:w-120 lg:w-165"
+            className="w-60 md:w-100 lg:w-165"
           />
         </div>
       </div>
