@@ -30,7 +30,7 @@ const Overview = () => {
   useEffect(() => {
     // Slide in for "What We Offer"
     gsap.from(".left-in", {
-      x: -100,
+      x: "-100%",
       opacity: 0,
       duration: 3,
       ease: "power3.out",
@@ -42,13 +42,13 @@ const Overview = () => {
 
     // Slide in for "The Big Picture"
     gsap.from(".right-in", {
-      x: 100,
+      x: "100%",
       opacity: 0,
       duration: 3,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".right-in",
-        start: "top 80%",
+        start: "top 90%",
       },
     });
 
@@ -57,11 +57,11 @@ const Overview = () => {
       gsap.from(el as HTMLElement, {
         opacity: 0,
         y: 50,
-        duration: 2,
+        duration: 3,
         ease: "power2.out",
         scrollTrigger: {
           trigger: el as HTMLElement,
-          start: "top 85%",
+          start: "top 90%",
         },
       });
     });
@@ -177,7 +177,7 @@ const Overview = () => {
 
       <div className="grid grid-cols-1 gap-5">
         <div
-          className={`${poppins.className}  md:absolute top-1/4 right-5 md:w-60 flex flex-col gap-1`}
+          className={`${poppins.className} md:absolute top-1/4 right-5 md:w-60 flex flex-col gap-1`}
         >
           <h3 className="font-extralight text-lg md:text-xl">
             The Unmatched:
@@ -189,7 +189,7 @@ const Overview = () => {
           </p>
         </div>
         <div
-          className={`${poppins.className} md:absolute top-1/4 left-5 w-50 flex flex-col gap-1`}
+          className={`${poppins.className} md:absolute top-1/4 left-5 md:w-50 flex flex-col gap-1`}
         >
           <h3 className="font-extralight text-lg md:text-xl">
             Global reach, Local touch:
@@ -201,7 +201,7 @@ const Overview = () => {
           </p>
         </div>
         <div
-          className={`${poppins.className} md:absolute bottom-1/4 right-5 w-50 flex flex-col gap-1`}
+          className={`${poppins.className} md:absolute bottom-1/4 right-5 md:w-50 flex flex-col gap-1`}
         >
           <h3 className="font-extralight text-lg md:text-xl">
             DIverse Enterprise:
@@ -213,7 +213,7 @@ const Overview = () => {
           </p>
         </div>
         <div
-          className={`${poppins.className} md:absolute bottom-1/4 left-5 w-50 flex flex-col gap-1`}
+          className={`${poppins.className} md:absolute bottom-1/4 left-5 md:w-50 flex flex-col gap-1`}
         >
           <h3 className="font-extralight text-lg md:text-xl">
             Sustainable solutions:
@@ -225,7 +225,7 @@ const Overview = () => {
           </p>
         </div>
       </div>
-      <div className={`w-50 flex flex-col gap-1`}>
+      <div className={`w-full md:w-50 flex flex-col gap-1`}>
         <h3 className="font-extralight text-lg md:text-xl">
           Customer-centric Approach:
         </h3>
@@ -241,7 +241,7 @@ const Overview = () => {
       </section> 
 
         {/* What people say */}
-        <section className="fade-in-section  relative flex flex-col items-center justify-evenly gap-10 md:gp-20 p-4 fade-in-section">
+        <section className="mt-20 md:mt-40 fade-in-section relative flex flex-col items-center justify-evenly gap-10 md:gp-20 p-4 fade-in-section">
           <h1 className="text-4xl md:text-6xl text-center mb-10"> What people say?</h1>
           <Slider {...settings} className="w-full left-in gap-10 slick-space ">
             {

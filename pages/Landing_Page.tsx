@@ -31,7 +31,7 @@ const Hero = () => {
       textRef.current,
       { text: "", opacity: 0, y: 50 },
       {
-        text: "PHIPEST- <br /> -BENS",
+        text: "PHIPEST- <br /> -BENS.",
         opacity: 1,
         y: 0,
         duration: 3,
@@ -75,14 +75,14 @@ const Hero = () => {
     <div
       ref={bgRef}
       style={{ backgroundImage: "url(/bg.png)" }}
-      className={`sticky top-10 bg-fixed bg-no-repeat bg-cover bg-center ${poppins.className}`}
+      className={`sticky top-10 bg-fixed bg-no-repeat bg-cover bg- ${poppins.className}`}
     >
       {/* Hero Section */}
       <div className="relative bg-transparent h-[70vh] flex items-center justify-center md:justify-start text-black p-8 md:p-16">
         <div className="flex flex-col gap-">
           <h1
             ref={textRef}
-            className="font-light text-6xl md:text-7xl lg:text-8xl"
+            className="font-light text-center md:text-start text-6xl md:text-7xl lg:text-8xl"
           ></h1>
           <p className="subtext text-lg md:text-xl tracking-widest">
             International Nig Lmtd.
