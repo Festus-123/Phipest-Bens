@@ -6,6 +6,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 // gsap.registerPlugin(TextPlugin);
 
@@ -22,6 +23,8 @@ const poppins = Poppins({
 const Hero = () => {
   const textRef = useRef(null);
   const bgRef = useRef(null);
+  const illustrationRef = useRef(null);
+  const borderRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(TextPlugin);
@@ -39,7 +42,7 @@ const Hero = () => {
         ease: "power3.out",
         repeat: Infinity,
         repeatDelay: 30,
-      }
+      },
     );
 
     // Animate subtext fade in
@@ -69,16 +72,40 @@ const Hero = () => {
       yoyo: true,
       repeat: -1,
     });
+
+    gsap.fromTo(
+      illustrationRef.current,
+      { opacity: 0, y: 50, stagger: 0.3 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        scale: 1,
+        duration: 3,
+        delay: 0.5,
+        ease: "power3.out",
+      },
+    );
+
+    if (borderRef.current) {
+      gsap.to(borderRef.current, {
+        duration: 3,
+        repeat: -1,
+        ease: "linear",
+        backgroundPosition: "200% 0", // animate gradient sweep
+      });
+    }
   }, []);
 
   return (
     <div
       ref={bgRef}
       style={{ backgroundImage: "url(/bg.png)" }}
-      className={`sticky top-10 bg-fixed bg-no-repeat bg-cover bg- ${poppins.className}`}
+      className={`sticky top-10 bg-fixed bg-no-repeat bg-cover bg-center ${poppins.className}`}
     >
       {/* Hero Section */}
-      <div className="relative bg-transparent h-[75vh] flex items-center justify-center md:justify-start text-black p-8 md:p-16">
+      <div 
+        className=" relative bg-transparent h-[75vh] flex items-center justify-center md:justify-start text-black p-8 md:p-16">
         <div className="flex flex-col gap-">
           <h1
             ref={textRef}
@@ -95,6 +122,19 @@ const Hero = () => {
               Contact Info
             </button>
           </div>
+        </div>
+
+        <div
+          ref={illustrationRef}
+          className="absolute -bottom-5 md:-bottom-10 md:right-10 "
+        >
+          <Image
+            src="/illustration3.png"
+            alt="Illustration"
+            width={600}
+            height={600}
+            className="w-100 md:w-120 lg:w-165"
+          />
         </div>
       </div>
     </div>
