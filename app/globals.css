@@ -11,3 +11,7 @@ html {
 body::-webkit-scrollbar {
   display: none;
 }
+
+.slick-space div {
+  margin: 0 10px;
+}
