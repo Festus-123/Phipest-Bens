@@ -100,7 +100,7 @@ const Overview = () => {
     <div className={`relative bg-white p-8 md:p-16 z-10 ${poppins.className}`}>
       {/* What We Offer */}
       <section
-        className={`fade-in-section flex flex-col-reverse md:flex-row items-center gap-10 md:gap-40 md:p-8 lg:p-16`}
+        className={`fade-in-section flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20 lg:gap-40 md:p-8 lg:p-16`}
       >
         <div className="w-full md:w-[80%] lg:w-[60%] flex flex-col gap-2 md:gap-4">
           <h1 className="text-4xl md:text-5xl mb-2">What We Offer?</h1>
@@ -132,7 +132,7 @@ const Overview = () => {
 
       {/* The Big Picture */}
       <section
-        className={`fade-in-section flex flex-col-reverse md:flex-row-reverse items-center gap-10 md:gap-40 md:p-16 mt-20`}
+        className={`fade-in-section flex flex-col-reverse md:flex-row-reverse items-center gap-10 md:gap-20 lg:gap-40 md:p-16 mt-20`}
       >
         <div className="w-full md:w-[80%] lg:w-[60%] flex flex-col gap-2 md:gap-4">
           <h1 className="text-4xl md:text-5xl mb-2">The Big Picture ~</h1>
@@ -190,7 +190,7 @@ const Overview = () => {
           </div>
 
           <div
-            className={`${poppins.className} md:absolute top-1/4 right-5 md:w-40 lg:w-60 hidden md:flex flex-col gap-1`}
+            className={`${poppins.className} md:absolute md:top-0 lg:top-1/4 lg:right-5 md:w-70 lg:w-60 hidden md:flex flex-col gap-1`}
           >
             <h3 className="font-extralight text-lg md:text-xl">
               Unmatched Reliability:
@@ -202,7 +202,7 @@ const Overview = () => {
             </p>
           </div>
           <div
-            className={`${poppins.className} md:absolute top-1/4 left-5 md:w-40 lg:w-60 hidden md:flex flex-col gap-1`}
+            className={`${poppins.className} md:absolute md:top-0 lg:top-1/4 left-5 md:w-50 lg:w-60 hidden md:flex flex-col gap-1`}
           >
             <h3 className="font-extralight text-lg md:text-xl">
               Global reach, Local touch:

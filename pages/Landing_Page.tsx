@@ -15,7 +15,7 @@ const inter = Inter({
   weight: ["100", "400", "600", "700"],
 });
 
-const poppins = Poppins({
+export const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "400", "600", "700"],
 });
@@ -125,7 +125,7 @@ const Hero = () => {
 
         <div
           ref={illustrationRef}
-          className="absolute md:-bottom-20 md:right-10 "
+          className="absolute bottom-0 md:-bottom-20 md:right-10 "
         >
           <Image
             src="/illustration3.png"
