@@ -7,47 +7,52 @@ import gsap from "gsap";
 // import { Poppins } from 'next/font/google';
 import { poppins } from "@/pages/Landing_Page";
 
+export type IMAGES = {
+  name: string;
+  title: string;
+  src: string;
+}
+
+
 const About_Firm = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
 
+  const images: IMAGES[] = [
+    { name: "Mr Phillip Oladosu", title: "Chairman Executive officer/CEO", src: "/ceo_img2.png" },
+    { name: "Mr Israel Phillip", title: "Senior Director", src: "/ceo_img2.png" },
+    { name: "Miss Suzan Phillip", title: "Director", src: "/ceo_img2.png" },
+    { name: "Mr Samuel Phillip", title: "Associate Director", src: "/ceo_img2.png" },
+    { name: "Mrs Esther Phillip", title: "Managing Director", src: "/ceo_img2.png" },
+    { name: "Mr festus Phillip", title: "Lead Software Engineer", src: "/lead_software_eng.png" },
+  ];
+
   useEffect(() => {
     // Animate header fade-in + slide
-    gsap.from(headerRef.current, {
-      y: -50,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power3.out",
-    });
-
-    // Animate section content
-    gsap.from(sectionRef.current, {
-      opacity: 0,
-      y: 40,
-      duration: 1.5,
-      delay: 0.5,
-      ease: "power3.out",
-    });
-
-    // Animate values box with scale effect
-    gsap.from(valuesRef.current, {
-      scale: 0.9,
-      opacity: 0,
-      duration: 1.5,
-      delay: 1,
-      ease: "elastic.out(1, 0.5)",
+    gsap.utils.toArray(".fade-in-section").forEach((el) => {
+      gsap.from(el as HTMLElement, {
+        opacity: 0,
+        y: 50,
+        duration: 3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el as HTMLElement,
+          start: "top 80%",
+        },
+      });
     });
   }, []);
 
   return (
-    <div className={`bg-gray-50 text-gray-900 ${poppins.className}`}>
+    <div className={`p-8 lg:p-16 bg-gray-50 text-gray-900 ${poppins.className}`}>
+
+        <h1 className="fade-in-section text-4xl md:text-6xl tracking-wide mb-10 md:mb-20">About Us?</h1>
       {/* Hero Header */}
       <section
-        ref={headerRef}
-        className="p-8 md:p-16 flex flex-col gap-10 md:gap-10 items-center justify-center"
+        className="flex flex-col gap-10 md:gap-20 items-center justify-center"
       >
-        <div className="flex flex-col lg:flex-row gap-10 md:gap-20 items-start">
+        <div className="fade-in-section flex flex-col lg:flex-row lg:justify-evenly gap-10 md:gap-20 items-center">
           <div className="w-full lg:w-auto p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
             <Image
               src="/about_firm.png"
@@ -59,9 +64,8 @@ const About_Firm = () => {
           </div>
 
           <div className="w-full lg:w-[60%] flex flex-col gap-4 ">
-            <h1 className="text-4xl md:text-6xl tracking-wide">About Us?</h1>
 
-            <h1 className="text-2xl md:text-4xl mt-5 md:mt-10 tracking-wide font-light">
+            <h1 className="text-2xl md:text-4xl tracking-wide font-light">
               Our History?
             </h1>
             <p className="leading-relaxed md:text-lg text-justify">
@@ -75,14 +79,11 @@ const About_Firm = () => {
               local and global markets. The company’s growth was fueled by a
               commitment to integrity, transparency, and excellence, values that
               quickly earned it recognition among government agencies, private
-              enterprises, and community stakeholders. By consistently meeting
-              deadlines and exceeding expectations, Phipest‑Bens laid the
-              foundation for long‑term partnerships and a reputation for
-              reliability.
+              enterprises, and community stakeholders.
             </p>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row gap-10 md:gap-20 items-start">
+        <div className="fade-in-section flex flex-col lg:flex-row-reverse lg:justify-evenly gap-10 md:gap-20 items-center">
           <div className="w-full lg:w-auto p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
             <Image
               src="/about_firm.png"
@@ -108,23 +109,40 @@ const About_Firm = () => {
               partnering with public institutions to provide trusted solutions.
               The firm continues to embrace innovation and modernization,
               integrating new technologies and practices to stay ahead in
-              competitive markets. With a strong workforce and a culture of
-              customer‑centric service, Phipest‑Bens is positioned as a
-              forward‑thinking company that not only meets today’s demands but
-              also anticipates tomorrow’s opportunities.
+              competitive markets.
             </p>
           </div>
         </div>
       </section>
 
-      {/* History and Values */}
+      {/* Governing bodies */}
       <section
-        ref={sectionRef}
-        className="p-8 md:p-16 flex flex-col gap-6"
+        className="p-8 md:p-16 flex flex-col gap-6 mt-20"
       >
-        <h1 className="font-light text-6xl tracking-wide text-center ">
+        <h1 className="fade-in-section font-light text-5xl md:text-6xl tracking-wide text-center mb-20">
           PHIPEST BENS INTERNATIONAL NIGERIA LIMITED.
         </h1>
+
+        {/* Governing Bodies */}
+        <div className="fade-in-section">
+            <h1 className="text-2xl md:text-5xl mb-5">Board of Directors</h1>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+                {images.map((img, index) => (
+                    <div key={index} className={`p-2 pb-8 shadow-xl rounded-lg text-center ${img.name === "Mr Phillip Oladosu" ? "md:col-span-2 md:row-span-2" : "max-h-100"}`}>
+                        <Image
+                            src={img.src}
+                            alt={img.name}
+                            width={200}
+                            height={200}
+                            className="object-cover object-center w-full"
+                        />
+                        <h2 className="text-xs md:text-sm mt-4 font-medium">{img.name}</h2>
+                        <p className="text-gray-500 text-xs">{img.title}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
 
         <div
           ref={valuesRef}
@@ -151,7 +169,7 @@ const About_Firm = () => {
       </section>
 
       {/* Location Map */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="fade-in-section container mx-auto px-4 py-12">
         <h2 className="text-2xl font-bold mb-4 ">Our Location</h2>
         <p className="text-lg mb-6 text-gray-700">
           Explore our company sites and offices.
