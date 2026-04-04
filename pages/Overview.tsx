@@ -19,7 +19,6 @@ const poppins = Poppins({
 
 const Overview = () => {
   const [width, setWidth] = useState<number>(0);
-
   const [number, setNumber] = useState<number[]>([]);
 
   useEffect(() => {
@@ -78,7 +77,7 @@ const Overview = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: el as HTMLElement,
-          start: "top 80%",
+          start: "top 60%",
         },
       });
     });

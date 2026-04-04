@@ -24,7 +24,8 @@ const Hero = () => {
   const textRef = useRef(null);
   const bgRef = useRef(null);
   const illustrationRef = useRef(null);
-  const borderRef = useRef(null);
+  const subtextref = useRef(null);
+  const heroBtnRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(TextPlugin);
@@ -46,7 +47,7 @@ const Hero = () => {
     );
 
     // Animate subtext fade in
-    gsap.from(".subtext", {
+    gsap.from(subtextref.current, {
       opacity: 0,
       y: 20,
       duration: 2,
@@ -55,7 +56,7 @@ const Hero = () => {
     });
 
     // Animate buttons with stagger
-    gsap.from(".hero-btn", {
+    gsap.from(heroBtnRef.current, {
       opacity: 0,
       y: 30,
       duration: 1.5,
@@ -87,14 +88,6 @@ const Hero = () => {
       },
     );
 
-    if (borderRef.current) {
-      gsap.to(borderRef.current, {
-        duration: 3,
-        repeat: -1,
-        ease: "linear",
-        backgroundPosition: "200% 0", // animate gradient sweep
-      });
-    }
   }, []);
 
   return (
@@ -110,14 +103,14 @@ const Hero = () => {
             ref={textRef}
             className="font-light text-center md:text-start text-6xl md:text-7xl lg:text-8xl"
           ></h1>
-          <p className="subtext text-lg md:text-xl tracking-widest">
+          <p ref={subtextref} className="text-lg md:text-xl tracking-widest">
             International Nig Lmtd.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm md:text-base">
-            <button className="hero-btn w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r text-white from-blue-400 to-blue-500 font-medium cursor-pointer">
+            <button ref={heroBtnRef} className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r text-white from-blue-400 to-blue-500 font-medium cursor-pointer">
               Request a partnership
             </button>
-            <button className="hero-btn w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10 text-white font-medium cursor-pointer">
+            <button ref={heroBtnRef} className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10 text-white font-medium cursor-pointer">
               Contact Info
             </button>
           </div>
@@ -125,7 +118,7 @@ const Hero = () => {
 
         <div
           ref={illustrationRef}
-          className="absolute bottom-0 md:-bottom-20 md:right-10 "
+          className="hidden lg:block absolute bottom-0 md:-bottom-20 md:right-10 "
         >
           <Image
             src="/illustration3.png"
