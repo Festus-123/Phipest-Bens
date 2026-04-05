@@ -62,7 +62,7 @@ const page = () => {
     // Display Projects here
     <div>
         <section>
-        <div className="p-8 md:p-16 bg-linear-to-r from-blue-700 to-blue-800 text-white">
+        <div className="p-8 md:p-16 bg-linear-to-r from-blue-400 to-blue-500 text-white">
             <h1 className="text-4xl md:text-7xl text-center md:text-left font-extrabold">
                 Projects
             </h1>
@@ -70,11 +70,11 @@ const page = () => {
         </section>
 
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-4 md:p-16 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-20 lg:gap-15 p-4 md:p-16 ">
         {projects.map((project: PROJECTS, index: number) => (
           <div
             key={index}
-            className="relative drop-shadow-lg  rounded-lg flex flex-col gap-4  mb-4"
+            className="relative drop-shadow-lg rounded-lg flex flex-col gap-4  mb-4"
           >
             {/* <div className="max-h-65"> */}
               <Image

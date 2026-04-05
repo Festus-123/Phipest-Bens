@@ -77,15 +77,15 @@ const Navbar = () => {
 
       {/* Right side: CTA button */}
       <button className="cursor-pointer bg-linear-to-r from-blue-400 hover:from-blue-800 to-blue-500 text-white font-bold py-1 px-4 md:py-2 md:px-8 rounded-xl">
-        Request a partnership
+        Contact Us
       </button>
 
       {/* Mobile dropdown menu */}
       <div
         ref={menuRef}
-        className="absolute top-full left-1 w-full h-screen backdrop-blur-xs md:hidden"
+        className="absolute top-full w-full h-screen backdrop-blur-md bg-black/20 md:hidden"
       >
-        <div className="flex flex-col p-2 gap-6">
+        <div className="h-screen flex flex-col p-6 gap-6">
           {links.map((item, index) => (
             <Link
               className={`font-medium bg-white rounded-lg p-2 w-max text-lg ${

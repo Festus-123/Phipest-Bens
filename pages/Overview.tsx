@@ -76,7 +76,7 @@ const Overview = () => {
     <div className={`relative bg-white p-8 md:p-16 z-10 ${poppins.className}`}>
       {/* What We Offer */}
       <section
-        className={`fade-in-section flex flex-col-reverse md:flex-row items-center ==gap-10 md:gap-20 lg:gap-40 md:p-8 lg:p-16`}
+        className={`fade-in-section flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20 lg:gap-40 md:p-8 lg:p-16`}
       >
         <div className="w-full md:w-[80%] lg:w-[60%] flex flex-col gap-2 md:gap-4">
           <h1 className="text-4xl md:text-5xl mb-2">What We Offer?</h1>

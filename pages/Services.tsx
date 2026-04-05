@@ -5,7 +5,7 @@ import { services } from "../data/services";
 const Services = () => {
   return (
     <div className="">
-      <h1 className="font-bold text-xl md:text-3xl p-4 md:p-16">
+      <h1 className="font-bold text-xl md:text-3xl p-4 md:p-16 mb-10 md:mb-0">
         Our Services
       </h1>
 

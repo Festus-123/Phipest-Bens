@@ -66,7 +66,7 @@ const About_Firm = () => {
 
   return (
     <div
-      className={`p-8 lg:p-16 bg-gray-50 text-gray-900 ${poppins.className}`}
+      className={`p-4 md:p-8 lg:p-16 bg-gray-50 text-gray-900 ${poppins.className}`}
     >
       <h1 ref={fadeInRef} className="text-4xl md:text-6xl tracking-wide mb-10 md:mb-20">
         About Us?
@@ -142,20 +142,20 @@ const About_Firm = () => {
       </section>
 
       {/* Governing bodies */}
-      <section className="p-4 md:p-16 flex flex-col gap-6 mt-20">
+      <section className="p-2 md:p-8 lg:p-16 flex flex-col gap-6 mt-20">
         <h1 className="font-light text-3xl md:text-6xl tracking-wide text-center mb-20">
           PHIPEST BENS INTERNATIONAL NIGERIA LIMITED.
         </h1>
 
         {/* Governing Bodies */}
-        <div className="">
+        <div className="w-full">
           <h1 className="text-2xl md:text-5xl mb-5">Board of Directors</h1>
 
           <div className="md:p-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-10">
             {images.map((img, index) => (
               <div
                 key={index}
-                className={`md:pb-8 shadow-xl rounded-lg text-center ${img.name === "Mr Phillip Oladosu" ? "col-span-2 md:row-span-2" : ""}`}
+                className={`pb-4 md:pb-8 shadow-xl rounded-lg text-center ${img.name === "Mr Phillip Oladosu" ? "col-span-2 md:row-span-2" : ""}`}
               >
                 <Image
                   src={img.src}
@@ -173,7 +173,7 @@ const About_Firm = () => {
           </div>
         </div>
 
-        <div className="bg-white shadow-lg p-6 rounded-lg border-l-4 border-blue-600">
+        <div className="bg-white shadow-lg p-2 md:p-4 rounded-lg border-l-4 border-blue-600">
           <p className="text-xl md:text-2xl">Our Core Values:</p>
           <ul className="list-disc list-inside mt-2 space-y-1 text-gray-700">
             <li>Integrity: Honesty and transparency in all dealings.</li>
