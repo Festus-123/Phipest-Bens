@@ -1,30 +1,46 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import {services} from '../data/services';
+import Link from "next/link";
+import Image from "next/image";
+import { services } from "../data/services";
 
 const Services = () => {
-    return (
-        <div className=''>
+  return (
+    <div className="">
+      <h1 className="font-bold text-xl md:text-3xl p-4 md:p-16">
+        Our Services
+      </h1>
 
-            <h1 className='font-bold text-xl md:text-3xl p-4 md:p-16'>
-                Our Services
-            </h1>
-
-            {/* Display services */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  p-4 md:p-16 gap-10'>
-            {services.map((service) => (
-                <div key={service.id} className="relative flex flex-col gap-5rounded-lg shadow-md">
-                    <Image src={service.imageUrl} alt={service.title} width={600} height={600} className="w-full h-48 object-cover rounded-md mb-4" />
-                    <div className="p-4 flex flex-col gap-2">
-                    <h3 className="text-xl md:text-2xl font-bold ">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                    </div>
-                </div>
-            ))}
+      {/* Display services */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  p-4 md:p-16 gap-10">
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className="relative flex flex-col gap-5rounded-lg shadow-md"
+          >
+            <Image
+              src={service.imageUrl}
+              alt={service.title}
+              width={600}
+              height={600}
+              className="w-full h-100 object-cover rounded-md mb-2"
+            />
+            <div
+                className="w-full h-full justify-end items-start absolute inset-0 text-white bg-black/40 flex flex-col gap-2 md:opacity-0 hover:opacity-100 transition-opacity duration-200 p-4 md:p-8 rounded-lg">
+              <h3 className="text-xl md:text-2xl font-bold ">
+                {service.title}
+              </h3>
+              <p className="text-gray-200">{service.description}</p>
+              <Link
+                href=""
+                className="bg-linear-to-r from-blue-400 to-blue-500 p-2 rounded-lg"
+              >
+                Request Service
+              </Link>
             </div>
-
-        </div>
-    );
-}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Services;

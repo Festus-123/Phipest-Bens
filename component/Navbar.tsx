@@ -83,12 +83,12 @@ const Navbar = () => {
       {/* Mobile dropdown menu */}
       <div
         ref={menuRef}
-        className="absolute top-full left-2 md:hidden"
+        className="absolute top-full left-1 w-full h-screen backdrop-blur-xs md:hidden"
       >
-        <div className="flex flex-col p-2 gap-4">
+        <div className="flex flex-col p-2 gap-6">
           {links.map((item, index) => (
             <Link
-              className={`font-medium bg-white rounded-lg p-2 w-max ${
+              className={`font-medium bg-white rounded-lg p-2 w-max text-lg ${
                 pathname === item.href && "border-l-2 border-blue-950"
               }`}
               key={index}
