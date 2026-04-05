@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { Poppins } from 'next/font/google';
 import { poppins } from "@/pages/Landing_Page";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -143,8 +142,8 @@ const About_Firm = () => {
       </section>
 
       {/* Governing bodies */}
-      <section className="p-8 md:p-16 flex flex-col gap-6 mt-20">
-        <h1 className="fade-in-section font-light text-5xl md:text-6xl tracking-wide text-center mb-20">
+      <section className="p-4 md:p-16 flex flex-col gap-6 mt-20">
+        <h1 className="font-light text-3xl md:text-6xl tracking-wide text-center mb-20">
           PHIPEST BENS INTERNATIONAL NIGERIA LIMITED.
         </h1>
 
@@ -152,18 +151,18 @@ const About_Firm = () => {
         <div className="">
           <h1 className="text-2xl md:text-5xl mb-5">Board of Directors</h1>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+          <div className="md:p-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-10">
             {images.map((img, index) => (
               <div
                 key={index}
-                className={`p-2 pb-8 shadow-xl rounded-lg text-center ${img.name === "Mr Phillip Oladosu" ? "md:col-span-2 md:row-span-2" : "max-h-100"}`}
+                className={`md:pb-8 shadow-xl rounded-lg text-center ${img.name === "Mr Phillip Oladosu" ? "col-span-2 md:row-span-2" : ""}`}
               >
                 <Image
                   src={img.src}
                   alt={img.name}
                   width={200}
                   height={200}
-                  className="object-cover object-center w-full"
+                  className={`object-cover object-center w-full ${img.name === "Mr Phillip Oladosu" ? "md:h-auto" : "md:max-h-80"}`}
                 />
                 <h2 className="text-xs md:text-sm mt-4 font-medium">
                   {img.name}

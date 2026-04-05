@@ -110,9 +110,9 @@ const Hero = () => {
             <button ref={heroBtnRef} className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r text-white from-blue-400 to-blue-500 font-medium cursor-pointer">
               Request a partnership
             </button>
-            <button ref={heroBtnRef} className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10 text-white font-medium cursor-pointer">
+            <a href="#contact-info" ref={heroBtnRef} className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10 text-white font-medium cursor-pointer">
               Contact Info
-            </button>
+            </a>
           </div>
         </div>
 
