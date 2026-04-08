@@ -1,7 +1,7 @@
 const News = () => {
   return (
     <div>
-      <div className="bg-linear-to-r from-blue-700 to-blue-800 p-4 md:p-16 text-white">
+      <div className="bg-linear-to-r from-blue-400 to-blue-500 p-4 md:p-16 text-white">
         <h1 className="font-extrabold text-3xl md:text-7xl text-center md:text-start">
           News
         </h1>

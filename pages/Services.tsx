@@ -1,8 +1,19 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "../data/services";
+import { useState } from "react";
+import Request_Modal from "@/component/Request_Modal";
 
 const Services = () => {
+  const [modal, setModal] = useState<boolean>(false)
+  const [serviceName, setServiceName] = useState("Construction")
+
+    const handleModal = (name: string) => {
+      setServiceName(name)
+    if(!modal) setModal(true);
+    else setModal(false);
+  }
   return (
     <div className="">
       <h1 className="font-bold text-xl md:text-3xl p-4 md:p-16 mb-10 md:mb-0">
@@ -31,7 +42,8 @@ const Services = () => {
               <p className="text-gray-200">{service.description}</p>
               <Link
                 href=""
-                className="bg-linear-to-r from-blue-400 to-blue-500 p-2 rounded-lg"
+                onClick={() => handleModal(service.title)}
+                className="bg-white p-2 rounded-xl text-black"
               >
                 Request Service
               </Link>
@@ -39,6 +51,13 @@ const Services = () => {
           </div>
         ))}
       </div>
+
+    {modal && (
+          <Request_Modal 
+            title={`Service: ${serviceName}`}
+            requestType={`${serviceName}`}
+            relaxed={() => handleModal(serviceName)}/>
+        )}
     </div>
   );
 };

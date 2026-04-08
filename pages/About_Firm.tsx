@@ -174,12 +174,21 @@ const About_Firm = () => {
         </div>
 
         <div className="bg-white shadow-lg p-2 md:p-4 rounded-lg border-l-4 border-blue-600">
-          <p className="text-xl md:text-2xl">Our Core Values:</p>
+          <p className="text-xl md:text-2xl">Details:</p>
           <ul className="list-disc list-inside mt-2 space-y-1 text-gray-700">
-            <li>Integrity: Honesty and transparency in all dealings.</li>
-            <li>Reliability: Consistently delivering on promises.</li>
+            <li> <b>Founded:</b> 2013 </li>
+            <li> <b>Location:</b> 1 sijuade, oldd-ife road ibadan, Nigeria.</li>
             <li>
-              Customer Satisfaction: Prioritizing client needs and expectations.
+              <b>Founder:</b> Mr Phipplip Oluwole Oladosu
+            </li>
+            <li>
+              <b>C.E.O:</b> Mr Phillip Oluwole Oladosu
+            </li>
+            <li>
+              <b>Net Worth:</b> --- ---
+            </li>
+            <li>
+              <b>About CEO:</b> born {' '} <b>1971</b> {' '} at {' '} <b>Ibadan, Nigeria</b>
             </li>
           </ul>
         </div>

@@ -1,0 +1,30 @@
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+// if(!process.env.ESEND_API_KEY) {
+//     throw new Error("Missing Resend API Key")
+// }
+
+export async function POST(req: Request) {
+  const { name, email, request, requestType } = await req.json();
+
+  try {
+    const data = await resend.emails.send({
+      from: "onboarding@resend.dev", // later change to your domain
+      to: "st.festus4cruise@gmail.com", // YOUR EMAIL
+      subject: `New message from ${name}`,
+      html: `
+        <h2>New Client Message</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Request:</strong> ${request}</p>
+        <p><strong>RequestType:</strong> ${requestType}</p>
+      `,
+    });
+
+    return Response.json({ success: true, data });
+  } catch (error) {
+    return Response.json({ success: false, error });
+  }
+}

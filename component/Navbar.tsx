@@ -4,12 +4,14 @@ import { useRef, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { HiMenu, HiX } from "react-icons/hi";
+import Request_Modal from "./Request_Modal";
 
 const Navbar = () => {
   const pathname = usePathname();
   const containerRef = useRef(null);
   const menuRef = useRef(null);
   const [open, setOpen] = useState(false);
+  const [modal, setModal] = useState<boolean>(false)
 
   useEffect(() => {
     gsap.fromTo(
@@ -36,12 +38,23 @@ const Navbar = () => {
     }
   }, [open]);
 
+  const handleModal = () => {
+    if(!modal && !open){
+      setModal(true)
+    }else if(!modal && open){
+      setOpen(false)
+      setModal(true)
+    }else {
+      setModal(false)
+    }
+  }
+
+
   const links = [
     { name: "Home", href: "/" },
     { name: "About_Firm", href: "/about_firm" },
     { name: "Services", href: "/services" },
     { name: "Projects", href: "/projects" },
-    { name: "Events", href: "/events" },
     { name: "News", href: "/news" },
   ];
 
@@ -76,14 +89,23 @@ const Navbar = () => {
       </div>
 
       {/* Right side: CTA button */}
-      <button className="cursor-pointer bg-linear-to-r from-blue-400 hover:from-blue-800 to-blue-500 text-white font-bold py-1 px-4 md:py-2 md:px-8 rounded-xl">
+      <button 
+        onClick={handleModal}
+        className="cursor-pointer bg-linear-to-r from-blue-400 hover:from-blue-800 to-blue-500 text-white font-bold py-1 px-4 md:py-2 md:px-8 rounded-xl">
         Contact Us
       </button>
+
+      {modal && (
+          <Request_Modal 
+            title="Contact Us"
+            requestType="Full Service"
+            relaxed= {handleModal}/>
+        )}
 
       {/* Mobile dropdown menu */}
       <div
         ref={menuRef}
-        className="absolute top-full w-full h-screen backdrop-blur-md bg-black/20 md:hidden"
+        className="absolute top-full w-full h-screen backdrop-blur-md md:hidden"
       >
         <div className="h-screen flex flex-col p-6 gap-6">
           {links.map((item, index) => (

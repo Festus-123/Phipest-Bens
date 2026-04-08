@@ -35,7 +35,7 @@ const Overview = () => {
 
   const handleArray = () => {
     const array: number[] = [];
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i <= 30; i++) {
       array.push(i);
       const handlePush = () => setNumber(array);
       handlePush();
@@ -123,7 +123,7 @@ const Overview = () => {
             everyone can prosper together.
           </p>
           <Link
-            href="/about_firm"
+            href="/projects"
             className="bg-linear-to-r from-blue-400 to-blue-500 hover:from-blue-600 w-max py-2 px-4 md:py-3 md:px-6 mt-2 rounded-lg text-white place-self-end"
           >
             Visit page
@@ -147,7 +147,7 @@ const Overview = () => {
         </h1>
         <section className="relative flex flex-col items-center justify-evenly gap-10 md:gp-20 p-4 md:p-16 fade-in-section">
           {/* Decorative badges */}
-          <div className="p-4 mt-10 h-80 md:h-120 w-15 lg:w-20 drop-shadow-2xl bg-linear-to-b from-blue-400 to-blue-500 relative text-center text-white text-shadow-lg">
+          <div className="p-4 mt-10 h-80 md:h-120 w-15 lg:w-20 drop-shadow-2xl bg-linear-to-b from-blue-400 to-blue-500 relative text-center text-black tracking-wider text-shadow-lg">
             <div className="w-50 md:w-70 text-xs md:text-sm p-2 md:p-4 absolute top-5 md:top-10 -left-2 drop-shadow-2xl bg-linear-to-r from-yellow-400 to-yellow-500">
               Unmatched Reliability
             </div>
