@@ -1,6 +1,6 @@
 "use client";
 import { Inter, Poppins } from "next/font/google";
-import { useState ,useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import Request_Modal from "@/component/Request_Modal";
@@ -27,7 +27,7 @@ const Hero = () => {
   const bgRef = useRef(null);
   const illustrationRef = useRef(null);
   const subtextref = useRef(null);
-  const heroBtnRef = useRef(null);
+  const cursorRef = useRef(null);
   const [modal, setModal] = useState<boolean>(false);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Hero = () => {
       textRef.current,
       { text: "", opacity: 0, y: 50 },
       {
-        text: "PHIPEST- <br /> -BENS.",
+        text: "PHIPEST - BENS <br /> INT NIG LTD.",
         opacity: 1,
         y: 0,
         duration: 3,
@@ -48,6 +48,15 @@ const Hero = () => {
         repeatDelay: 30,
       },
     );
+
+    // Blinking cursor loop
+    gsap.to(cursorRef.current, {
+      opacity: 0,
+      duration: 0.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+    });
 
     // Animate subtext fade in
     gsap.from(subtextref.current, {
@@ -59,7 +68,7 @@ const Hero = () => {
     });
 
     // Animate buttons with stagger
-    gsap.from(heroBtnRef.current, {
+    gsap.from(gsap.utils.toArray(".hero-btn"), {
       opacity: 0,
       y: 30,
       duration: 1.5,
@@ -70,7 +79,7 @@ const Hero = () => {
 
     // Background subtle zoom loop
     gsap.to(bgRef.current, {
-      scale: 1.05,
+      scale: 1.1,
       duration: 3,
       ease: "power1.inOut",
       yoyo: true,
@@ -90,56 +99,60 @@ const Hero = () => {
         ease: "power3.out",
       },
     );
-
   }, []);
 
   const handleModal = () => {
-    if(!modal) setModal(true);
+    if (!modal) setModal(true);
     else setModal(false);
-  }
+  };
 
   return (
-    <div className="">
-
-    <div
-      ref={bgRef}
-      style={{ backgroundImage: "url(/bg.png)" }}
-      className={`sticky top-10 bg-fixed bg-no-repeat bg-cover bg-center ${poppins.className}`}
-    >
-      {/* Hero Section */}
-      <div className="bg-transparent h-[75vh] flex items-center justify-center text-black p-8 md:p-12 lg:p-16">
-        <div className="flex flex-col gap- mb-10 md:mb-0">
-          <h1
-            ref={textRef}
-            className="font-light text-center text-6xl md:text-7xl lg:text-8xl"
-          ></h1>
-          <p ref={subtextref} className="text-lg md:text-xl text-center tracking-widest mt-5">
-            International Nig Lmtd.
-          </p>
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm md:text-base">
-            <button 
-              onClick={handleModal}
-              ref={heroBtnRef} className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r text-white from-blue-400 to-blue-500 font-medium cursor-pointer">
-              Request a partnership
-            </button>
-            <a href="#contact-info" ref={heroBtnRef} className="w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10 text-white font-medium cursor-pointer">
-              Contact Info
-            </a>
+    <div className="relative">
+      <div
+        ref={bgRef}
+        style={{ backgroundImage: "url(/landing-page2.png)" }}
+        className={`sticky top-0 bg-no-repeat bg-cover bg-center ${poppins.className}`}
+      >
+        <div className="absolute inset-0 w-full h-full bg-black/60" />
+        {/* Hero Section */}
+        <div className="relative bg-transparent h-screen flex items-center justify-center text-white p-8 md:p-12 lg:p-16">
+          <div className="flex flex-col gap- mb-10 md:mb-0">
+            <h1 className="font-light text-center text-6xl md:text-7xl lg:text-8xl">
+              <span ref={textRef}></span>
+              <span ref={cursorRef} className="inline-block">|</span>
+            </h1>
+            <p
+              ref={subtextref}
+              className="text-lg md:text-xl text-center tracking-widest mt-5"
+            >
+              International Nig Lmtd.
+            </p>
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm md:text-base">
+              <button
+                onClick={handleModal}
+                className="hero-btn cursor-pointer bg-linear-to-r from-blue-400 to-blue-500 p-2 rounded-xl mt-5 px-8 md:px-4 font-medium"
+              >
+                Request a partnership
+              </button>
+              <a
+                href="#contact-info"
+                className="hero-btn w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10  font-medium cursor-pointer"
+              >
+                Contact Info
+              </a>
+            </div>
           </div>
         </div>
-
-
       </div>
-    </div>
-    <Overview />
-        
-      {modal && (
-          <Request_Modal 
-            title="Request a partnershp"
-            requestType="Partnership"
-            relaxed={handleModal}/>
-        )}
+      <Overview />
 
+      {modal && (
+        <Request_Modal
+          title="Request a partnershp"
+          requestType="Partnership"
+          relaxed={handleModal}
+        />
+      )}
     </div>
   );
 };

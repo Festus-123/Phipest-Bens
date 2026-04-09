@@ -10,7 +10,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const containerRef = useRef(null);
   const menuRef = useRef(null);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false)
 
   useEffect(() => {
@@ -105,7 +105,7 @@ const Navbar = () => {
       {/* Mobile dropdown menu */}
       <div
         ref={menuRef}
-        className="absolute top-full w-full h-screen backdrop-blur-md md:hidden"
+        className="absolute top-full left-0 w-full  backdrop-blur-md md:hidden"
       >
         <div className="h-screen flex flex-col p-6 gap-6">
           {links.map((item, index) => (

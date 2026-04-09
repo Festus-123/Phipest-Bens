@@ -50,11 +50,11 @@ const Overview = () => {
       gsap.from(el as HTMLElement, {
         opacity: 0,
         y: 50,
-        duration: 3,
+        duration: 2,
         ease: "power2.out",
         scrollTrigger: {
           trigger: el as HTMLElement,
-          start: "top 60%",
+          start: "top 90%",
         },
       });
     });
