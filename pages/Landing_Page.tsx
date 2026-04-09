@@ -123,11 +123,11 @@ const Hero = () => {
             </h1>
             <p
               ref={subtextref}
-              className="text-lg md:text-xl text-center tracking-widest mt-5"
+              className="text-sm text-center tracking-widest mt-5"
             >
-              International Nig Lmtd.
+              A B2B multiservice firm that handles constructions, car dealship, goods and services distribution <br /> at a fast and ease rate.
             </p>
-            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm md:text-base">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-sm md:text-base">
               <button
                 onClick={handleModal}
                 className="hero-btn cursor-pointer bg-linear-to-r from-blue-400 to-blue-500 p-2 rounded-xl mt-5 px-8 md:px-4 font-medium"
