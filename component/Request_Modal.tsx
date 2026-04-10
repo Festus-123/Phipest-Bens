@@ -74,7 +74,7 @@ const Request_Modal = ({ title, requestType, relaxed }: PROP) => {
       {/* Modal */}
       <form 
         onSubmit={handleSubmit}
-        className="bg-white text-gray-600 rounded-xl p-2 md:p-8 w-[90%] md:w-[50%] flex flex-col gap-2">
+        className="bg-white text-gray-600 rounded-xl p-4 md:p-8 w-[90%] md:w-[50%] flex flex-col gap-2">
         <h1 className="font-medium text-xl md:text-2xl mb-10">{title}</h1>
 
         {/* Name */}

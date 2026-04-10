@@ -23,29 +23,49 @@ export const poppins = Poppins({
 });
 
 const Hero = () => {
-  const textRef = useRef(null);
-  const bgRef = useRef(null);
-  const illustrationRef = useRef(null);
-  const subtextref = useRef(null);
-  const cursorRef = useRef(null);
+  const textRef = useRef<HTMLSpanElement | null>(null);
+  const cursorRef = useRef<HTMLSpanElement | null>(null);
+  const subtextref = useRef<HTMLParagraphElement | null>(null);
+  const bgRef = useRef<HTMLDivElement | null>(null);
+  const illustrationRef = useRef<HTMLDivElement | null>(null);
   const [modal, setModal] = useState<boolean>(false);
 
   useEffect(() => {
     gsap.registerPlugin(TextPlugin);
 
-    // Animate headline text typing effect
-    gsap.fromTo(
+    const fullText = "PHIPEST - BENS <br /> INT NIG LTD.";
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 10 });
+
+    // Typing in
+    tl.fromTo(
       textRef.current,
-      { text: "", opacity: 0, y: 50 },
+      { text: "" },
       {
-        text: "PHIPEST - BENS <br /> INT NIG LTD.",
+        text: fullText,
         opacity: 1,
         y: 0,
         duration: 3,
-        delay: 0.5,
-        ease: "power3.out",
-        repeat: Infinity,
-        repeatDelay: 30,
+        ease: "none",
+      },
+    );
+
+    // Pause before deleting
+    tl.to(textRef.current, { duration: 3 });
+
+    // Backspacing effect (delete backwards from cursor)
+    tl.to(
+      {},
+      {
+        duration: 3,
+        ease: "none",
+        onUpdate: function () {
+          if (textRef.current) {
+            const progress = this.progress(); // 0 → 1
+            const charsToShow = Math.floor(fullText.length * (1 - progress));
+            textRef.current.innerHTML = fullText.substring(0, charsToShow);
+          }
+        },
       },
     );
 
@@ -86,13 +106,13 @@ const Hero = () => {
       repeat: -1,
     });
 
+    // Illustration animation
     gsap.fromTo(
       illustrationRef.current,
-      { opacity: 0, y: 50, stagger: 0.3 },
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
-        stagger: 0.2,
         scale: 1,
         duration: 3,
         delay: 0.5,
@@ -116,16 +136,19 @@ const Hero = () => {
         <div className="absolute inset-0 w-full h-full bg-black/60" />
         {/* Hero Section */}
         <div className="relative bg-transparent h-screen flex items-center justify-center text-white p-8 md:p-12 lg:p-16">
-          <div className="flex flex-col gap- mb-10 md:mb-0">
-            <h1 className="font-light text-center text-6xl md:text-7xl lg:text-8xl">
+          <div className="flex flex-col gap- mb-10 md:mb-0 items-center">
+            <h1 className="font-light text-center text-5xl md:text-7xl lg:text-8xl">
               <span ref={textRef}></span>
-              <span ref={cursorRef} className="inline-block">|</span>
+              <span ref={cursorRef} className="inline-block">
+                |
+              </span>
             </h1>
             <p
               ref={subtextref}
-              className="text-sm text-center tracking-widest mt-5"
+              className="text-sm text-center tracking-widest mt-5 w-full md:w-[60%]"
             >
-              A B2B multiservice firm that handles constructions, car dealship, goods and services distribution <br /> at a fast and ease rate.
+              A B2B multiservice firm that handles constructions, car dealship,
+              goods and services distribution at a fast and ease rate.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-sm md:text-base">
               <button
