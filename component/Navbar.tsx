@@ -103,9 +103,10 @@ const Navbar = () => {
         )}
 
       {/* Mobile dropdown menu */}
+      { open && (
       <div
         ref={menuRef}
-        className="absolute top-full left-0 w-full  backdrop-blur-md md:hidden"
+        className="absolute top-full left-0 w-full backdrop-blur-md md:hidden"
       >
         <div className="h-screen flex flex-col p-6 gap-6">
           {links.map((item, index) => (
@@ -122,6 +123,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
+      )}
     </div>
   );
 };

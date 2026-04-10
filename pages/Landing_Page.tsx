@@ -131,7 +131,7 @@ const Hero = () => {
       <div
         ref={bgRef}
         style={{ backgroundImage: "url(/landing-page2.png)" }}
-        className={`sticky top-0 bg-no-repeat bg-cover bg-center ${poppins.className}`}
+        className={`bg-no-repeat bg-cover bg-center ${poppins.className}`}
       >
         <div className="absolute inset-0 w-full h-full bg-black/60" />
         {/* Hero Section */}
