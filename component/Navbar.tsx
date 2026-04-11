@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { HiMenu, HiX } from "react-icons/hi";
 import Request_Modal from "./Request_Modal";
+import { poppins } from "@/pages/Landing_Page";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -61,7 +62,7 @@ const Navbar = () => {
   return (
     <div
       ref={containerRef}
-      className="sticky top-0 z-50 bg-white w-full p-4 flex justify-between items-center text-sm md:text-lg"
+      className={`sticky top-0 z-50 bg-white w-full p-4 flex justify-between items-center text-sm md:text-lg ${poppins.className}`}
     >
       {/* Left side: Logo or nav links (desktop) */}
       <div className="hidden md:flex flex-row items-center gap-6">

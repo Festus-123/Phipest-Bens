@@ -70,6 +70,7 @@ const Overview = () => {
     slidesToScroll: width < 768 ? 1 : 2,
     autoplay: true,
     autoplaySpeed: 1000,
+    arrows: false,
   };
 
   return (
