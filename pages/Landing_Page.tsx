@@ -33,7 +33,7 @@ const Hero = () => {
   useEffect(() => {
     gsap.registerPlugin(TextPlugin);
 
-    const fullText = "PHIPEST - BENS <br /> INT NIG LTD.";
+    const fullText = "PHIPEST - BENS INT NIG LTD.";
 
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 5 });
 
@@ -131,11 +131,11 @@ const Hero = () => {
       <div
         ref={bgRef}
         style={{ backgroundImage: "url(/landing-page2.png)" }}
-        className={`bg-no-repeat bg-cover bg-center ${poppins.className}`}
+        className={`sticky top-15 bg-no-repeat bg-cover bg-bottom ${poppins.className}`}
       >
         <div className="absolute inset-0 w-full h-full bg-black/60" />
         {/* Hero Section */}
-        <div className="relative bg-transparent h-screen flex items-center justify-center text-white p-8 md:p-12 lg:p-16">
+        <div className="relative bg-transparent h-full flex items-center justify-center text-white p-8 md:p-12 lg:p-16">
           <div className="flex flex-col gap- mb-10 md:mb-0 items-center">
             <h1 className="font-light text-center text-5xl md:text-7xl lg:text-8xl">
               <span ref={textRef}></span>
@@ -143,7 +143,7 @@ const Hero = () => {
                 |
               </span>
             </h1>
-            <p
+            {/* <p
               ref={subtextref}
               className="text-sm text-center tracking-widest mt-5 w-full md:w-[60%]"
             >
@@ -163,7 +163,7 @@ const Hero = () => {
               >
                 Contact Info
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
