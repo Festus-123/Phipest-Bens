@@ -35,7 +35,7 @@ const Hero = () => {
 
     const fullText = "PHIPEST - BENS <br /> INT NIG LTD.";
 
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 10 });
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 5 });
 
     // Typing in
     tl.fromTo(
@@ -51,7 +51,7 @@ const Hero = () => {
     );
 
     // Pause before deleting
-    tl.to(textRef.current, { duration: 3 });
+    tl.to(textRef.current, { duration: 10 });
 
     // Backspacing effect (delete backwards from cursor)
     tl.to(
@@ -99,7 +99,7 @@ const Hero = () => {
 
     // Background subtle zoom loop
     gsap.to(bgRef.current, {
-      scale: 1.1,
+      scale: 1,
       duration: 3,
       ease: "power1.inOut",
       yoyo: true,

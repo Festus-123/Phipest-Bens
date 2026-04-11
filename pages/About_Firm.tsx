@@ -22,18 +22,18 @@ const About_Firm = () => {
     {
       name: "Mr Phillip Oladosu",
       title: "Chairman Executive officer/CEO",
-      src: "/ceo_img2.png",
+      src: "/phillip.png",
     },
     {
       name: "Mr Israel Phillip",
       title: "Senior Director",
-      src: "/ceo_img2.png",
+      src: "/israel.png",
     },
     { name: "Miss Suzan Phillip", title: "Director", src: "/ceo_img2.png" },
     {
       name: "Mr Samuel Phillip",
       title: "Associate Director",
-      src: "/ceo_img2.png",
+      src: "/samuel.png",
     },
     {
       name: "Mrs Esther Phillip",
@@ -43,7 +43,7 @@ const About_Firm = () => {
     {
       name: "Mr festus Phillip",
       title: "Lead Software Engineer",
-      src: "/lead_software_eng.png",
+      src: "/festus.png",
     },
   ];
 
