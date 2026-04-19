@@ -47,15 +47,12 @@ const Footer = () => {
   ];
   return (
     <footer 
-      style={{
-        backgroundImage: "url('/project12.jpg')",
-      }}
-      className="relative bg-center border-t border-gray-200 mt-10">
+      className="relative bg-white border-t border-gray-200  mt-10">
         {/* background overlay */}
-        <div className="bg-white absolute inset-0 opacity-80"/>
       {/* <div className="absolute inset-0 w-full h-full bg-black/60" /> */}
-      <div className="relative flex flex-col md:flex-row  gap-15 md:gap-5 items-start justify-between p-4 md:p-8">
+      <div className="relative flex flex-col md:flex-row  gap-10 items-start justify-between p-4 md:p-8">
         <aside className="flex flex-col gap-3">
+        <h1 className="font- text-xl md:text-3xl">Phipest-bens international nigeria limited</h1>
           <h1 className="font- text-2xl md:text-3xl italic">
             &quot; Your Partner In Progress &quot;
           </h1>
@@ -105,7 +102,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="relative border-t border-gray-400 p-4 md:p-8 font-light flex flex-col items-center gap-2">
+      <div className="relative border-t border-gray-200 p-4 md:p-8 font-light flex flex-col items-center gap-2">
         <p className="text-center">&copy;copyrights 2013 Phipest Bens Int Nig Ltd All rigths reserved</p>
       </div>
     </footer>

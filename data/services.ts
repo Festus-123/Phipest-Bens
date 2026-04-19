@@ -14,20 +14,6 @@ export const services: SERVICES[] = [
         description: "We provide high-quality building construction services for residential and commercial projects.",
         imageUrl: "/construction.jpg"
     },
-    { 
-        slug: "wholesales-retails",
-        id: 2,
-        title: "Wholesales & Retails",
-        description: "We offer a wide range of products for wholesale and retail customers, ensuring competitive prices and excellent service.",
-        imageUrl: "/wholesale.jpg"
-    },
-    {
-        slug: "import-export",
-        id: 3,
-        title: "import & export",
-        description: "We facilitate import and export services, connecting businesses globally and ensuring smooth transactions.",
-        imageUrl: "/import_export.jpg"
-    },
     {
         slug: "business-consulting",
         id: 4,

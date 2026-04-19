@@ -20,7 +20,6 @@ const poppins = Poppins({
 
 const Overview = () => {
   const [width, setWidth] = useState<number>(0);
-  const [number, setNumber] = useState<number[]>([]);
 
   useEffect(() => {
     // Set initial width
@@ -34,15 +33,6 @@ const Overview = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleArray = () => {
-    const array: number[] = [];
-    for (let i = 0; i <= 30; i++) {
-      array.push(i);
-      const handlePush = () => setNumber(array);
-      handlePush();
-    }
-  };
-    
   useEffect(() => {
     // Fade in for "Why Choose" items
     gsap.utils.toArray(".fade-in-section").forEach((el) => {
@@ -57,8 +47,6 @@ const Overview = () => {
         },
       });
     });
-
-    handleArray();
   }, []);
 
   const settings = {
@@ -74,6 +62,12 @@ const Overview = () => {
 
   return (
     <div className={`relative bg-white p-8 md:p-16 z-10 ${poppins.className}`}>
+      <div className="md:hidden font-medium text-justify text-lg mb-10 drop-shadow-lg">
+        <p className="">
+          A B2B multiservice firm that handles constructions, car dealship,
+          goods and services distribution at a fast and ease rate.
+        </p>
+      </div>
       {/* What We Offer */}
       <section
         className={`fade-in-section flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20 lg:gap-40 md:p-8 lg:p-16`}
@@ -212,7 +206,9 @@ const Overview = () => {
               ensuring that our clients receive value that endures over time.
             </p>
           </div>
-          <div className={`w-full md:w-40 lg:w-60 hidden md:flex flex-col gap-1`}>
+          <div
+            className={`w-full md:w-40 lg:w-60 hidden md:flex flex-col gap-1`}
+          >
             <h3 className="font-extralight text-lg md:text-xl">
               Customer-centric Approach:
             </h3>
@@ -240,20 +236,18 @@ const Overview = () => {
           {" "}
           What people say?
         </h1>
-        <Slider
-          {...settings}
-          className="w-full left-in slick-space rounded-lg"
-        >
+        <Slider {...settings} className="w-full left-in slick-space rounded-lg">
           {testimonies.map((item, index) => (
             <div
               key={index}
               className={` bg-linear-to-b from-blue-200 to-blue-100 p-2 md:p-4 shadow-lg rounded-lg`}
             >
               <p className="text-sm italic tracking-wide font-normal max-h-100">
-                <span className="mr-2  inline-block text-xl md:text-7xl">
+                <span className="mr-2  inline-block text-4xl md:text-7xl">
                   &quot;
                 </span>
-                <span className="inline-block font-medium">{item.name}</span> <br />
+                <span className="inline-block font-medium">{item.name}</span>{" "}
+                <br />
                 &quot;{item.testimony}&quot;
               </p>
             </div>

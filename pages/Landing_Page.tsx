@@ -147,8 +147,7 @@ const Hero = () => {
               ref={subtextref}
               className="text-sm text-center tracking-widest mt-5 w-full md:w-[60%]"
             >
-              A B2B multiservice firm that handles constructions, car dealship,
-              goods and services distribution at a fast and ease rate.
+              
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-sm md:text-base">
               <button

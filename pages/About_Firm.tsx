@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 export type IMAGES = {
   name: string;
   title: string;
+  about?: string;
   src: string;
 };
 
@@ -21,34 +22,49 @@ const About_Firm = () => {
   const images: IMAGES[] = [
     {
       name: "Mr Phillip Oladosu",
-      title: "Chairman Executive officer/CEO",
+      about:
+        "Visionary CEO leading the company’s growth, partnerships, and multi-industry success.",
+      title: "Chairman Executive Officer/CEO",
       src: "/phillip.png",
     },
     {
       name: "Mr Israel Phillip",
+      about:
+        "Oversees operations and strategy, ensuring smooth execution of projects and daily activities.",
       title: "Senior Director",
       src: "/israel.png",
     },
-    { name: "Miss Suzan Phillip", title: "Director", src: "/ceo_img2.png" },
+    {
+      name: "Miss Suzan Phillip",
+      about:
+        "Drives financial strategy and business growth through innovation and smart planning.",
+      title: "Director",
+      src: "/ceo_img2.png",
+    },
     {
       name: "Mr Samuel Phillip",
+      about:
+        "Supports expansion and client relations with strong project management expertise.",
       title: "Associate Director",
       src: "/samuel.png",
     },
     {
       name: "Mrs Esther Phillip",
+      about:
+        "Leads company direction and operations with a focus on excellence and client satisfaction.",
       title: "Managing Director",
       src: "/ceo_img2.png",
     },
     {
-      name: "Mr festus Phillip",
+      name: "Mr Festus Phillip",
+      about:
+        "Leads software development and drives the company’s digital innovation.",
       title: "Lead Software Engineer",
       src: "/festus.png",
     },
   ];
 
   useEffect(() => {
-
     // Animate header fade-in + slide
     gsap.utils.toArray(fadeInRef.current).forEach((el) => {
       gsap.from(el as HTMLElement, {
@@ -65,138 +81,134 @@ const About_Firm = () => {
   }, []);
 
   return (
-    <div
-      className={`p-4 md:p-8 lg:p-16 bg-gray-50 text-gray-900 ${poppins.className}`}
-    >
-      <h1 ref={fadeInRef} className="text-4xl md:text-6xl tracking-wide mb-10 md:mb-20">
-        About Us?
-      </h1>
-      {/* Hero Header */}
-      <section 
+    <div className={` text-gray-900 ${poppins.className}`}>
+      <h1
         ref={fadeInRef}
-        className="flex flex-col gap-10 md:gap-20 items-center justify-center">
-        <div
-          className="flex flex-col lg:flex-row lg:justify-evenly gap-10 md:gap-20 items-center"
-        >
-          <div className="w-full lg:w-auto p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
+        className="text-4xl md:text-6xl tracking-wide mb-10 md:mb-20 p-4 md:p-12"
+      >
+        About Us
+      </h1>
+
+      <section
+        ref={fadeInRef}
+        className="flex flex-col gap-16 md:gap-24 items-center justify-center p-4 md:p-12"
+      >
+        {/* History Section */}
+        <div className="flex flex-col lg:flex-row gap-10 md:gap-20 items-start">
+          <div className="w-full lg:w-auto p-1 md:p-4 pb-8 md:pb-8 shadow-xl rounded-lg">
             <Image
               src="/about_firm.png"
-              alt="About Us Illustration"
+              alt="Company history illustration"
               width={1200}
               height={400}
-              className="w-full h-auto object-center object-cover rounded-lg"
+              className="w-full h-auto object-cover rounded-lg"
             />
           </div>
 
-          <div className="w-full lg:w-[60%] flex flex-col gap-4 ">
-            <h1 className="text-2xl md:text-4xl tracking-wide font-light">
-              Our History?
-            </h1>
+          <div className="w-full lg:w-[60%] flex flex-col gap-4">
+            <h2 className="text-2xl md:text-4xl tracking-wide font-light">
+              Our Story
+            </h2>
+
             <p className="leading-relaxed md:text-lg text-justify">
-              Phipest‑Bens International Nigeria Limited was founded in 2013
-              with a vision to become a trusted provider of diverse services
-              across multiple industries. From its early beginnings, the company
-              established itself in construction and engineering, delivering
-              projects that combined technical expertise with reliability. Over
-              time, the firm expanded into import and export trading, building
-              strong international connections that allowed it to serve both
-              local and global markets. The company’s growth was fueled by a
-              commitment to integrity, transparency, and excellence, values that
-              quickly earned it recognition among government agencies, private
-              enterprises, and community stakeholders.
+              Founded in 2013, Phipest-Bens International Nigeria Limited began
+              with a clear vision: to deliver reliable and high-quality services
+              across multiple industries. Starting in construction and
+              engineering, the company built a reputation for excellence,
+              precision, and trust.
+            </p>
+
+            <p className="leading-relaxed md:text-lg text-justify">
+              As it grew, the firm expanded into import and export, creating
+              strong international partnerships and serving both local and
+              global markets. Its commitment to integrity and consistency has
+              earned lasting trust from clients, government bodies, and
+              partners.
+            </p>
+            <h2 className="text-2xl md:text-4xl tracking-wide font-light mt-10">
+              Where We Are Today
+            </h2>
+
+            <p className="leading-relaxed md:text-lg text-justify">
+              Today, the company operates as a diversified enterprise across
+              construction, trade, distribution, and government contracting. It
+              delivers modern infrastructure, facilitates global commerce, and
+              provides reliable services across sectors.
+            </p>
+
+            <p className="leading-relaxed md:text-lg text-justify">
+              By embracing innovation and evolving with industry trends,
+              Phipest-Bens continues to grow while maintaining its commitment to
+              quality, efficiency, and long-term impact.
             </p>
           </div>
         </div>
-        <div
-          className="flex flex-col lg:flex-row-reverse lg:justify-evenly gap-10 md:gap-20 items-center"
-        >
-          <div className="w-full lg:w-auto p-1 md:p-4 pb-16 md:pb-16 shadow-xl">
+
+        {/* Present Section */}
+        {/* <div className="flex flex-col lg:flex-row-reverse gap-10 md:gap-20 items-center">
+          <div className="w-full lg:w-auto p-1 md:p-4 shadow-xl rounded-lg">
             <Image
               src="/about_firm.png"
-              alt="About Us Illustration"
+              alt="Company operations illustration"
               width={1200}
               height={400}
-              className="w-full h-auto object-center object-cover rounded-lg"
+              className="w-full h-auto object-cover rounded-lg"
             />
           </div>
 
-          <div className="w-full lg:w-[60%] flex flex-col gap-4 ">
-            <h1 className="text-2xl md:text-4xl mt-5 md:mt-10 tracking-wide font-light">
-              Presently...?
-            </h1>
-            <p className="leading-relaxed md:text-lg text-justify">
-              Today, Phipest‑Bens International Nigeria Limited has evolved into
-              a diversified enterprise operating across: - Construction &
-              Infrastructure Development: delivering modern, sustainable
-              projects that shape communities. - Import/Export Services:
-              facilitating global trade with efficiency and compliance. -
-              Wholesale & Retail Distribution: ensuring quality products reach
-              consumers at competitive prices. - Government Contracting:
-              partnering with public institutions to provide trusted solutions.
-              The firm continues to embrace innovation and modernization,
-              integrating new technologies and practices to stay ahead in
-              competitive markets.
-            </p>
-          </div>
-        </div>
+
+        </div> */}
       </section>
 
       {/* Governing bodies */}
-      <section className="p-2 md:p-8 lg:p-16 flex flex-col gap-6 mt-20">
-        <h1 className="font-light text-3xl md:text-6xl tracking-wide text-center mb-20">
+      <section className=" flex flex-col gap-6 mt-20">
+        <h1 className="font-light text-3xl md:text-6xl tracking-wide text-center mb-20 p-4 md:p-12">
           PHIPEST BENS INTERNATIONAL NIGERIA LIMITED.
         </h1>
 
         {/* Governing Bodies */}
         <div className="w-full">
-          <h1 className="text-2xl md:text-5xl mb-5">Board of Directors</h1>
+          <h1 className="text-2xl md:text-5xl mb-5 p-4 md:p-12">
+            Board of Directors
+          </h1>
 
-          <div className="md:p-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-10">
+          <div className="flex flex-col gap-5">
             {images.map((img, index) => (
               <div
                 key={index}
-                className={`pb-4 md:pb-8 shadow-xl rounded-lg text-center ${img.name === "Mr Phillip Oladosu" ? "col-span-2 md:row-span-2" : ""}`}
+                className={`p-8 md:px-12 border-t border-b border-gray-300 gap-5 md:gap-0  flex flex-col md:flex-row md:items-center justify-between`}
               >
                 <Image
                   src={img.src}
                   alt={img.name}
                   width={200}
                   height={200}
-                  className={`object-cover object-center w-full ${img.name === "Mr Phillip Oladosu" ? "md:h-auto" : "md:max-h-80"}`}
+                  className={`object-cover object-center w-full h-auto max-h-140 md:w-60 md:h-60`}
                 />
-                <h2 className="text-xs md:text-sm mt-4 font-medium">
-                  {img.name}
-                </h2>
-                <p className="text-gray-500 text-xs">{img.title}</p>
+                <div>
+                  <h2 className="text-lg md:text-3xl mt-4 font-medium">
+                    {img.name}
+                  </h2>
+                  <p className="text-gray-500 text-sm md:text-base font-normal w-sm text-justify">
+                    {img.about}
+                  </p>
+                </div>
+                <p className="uppercase">{img.title}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="bg-white shadow-lg p-2 md:p-4 rounded-lg border-l-4 border-blue-600">
-          <p className="text-xl md:text-2xl">Details:</p>
-          <ul className="list-disc list-inside mt-2 space-y-1 text-gray-700">
-            <li> <b>Founded:</b> 2013 </li>
-            <li> <b>Location:</b> 1 sijuade, oldd-ife road ibadan, Nigeria.</li>
-            <li>
-              <b>Founder:</b> Mr Phipplip Oluwole Oladosu
-            </li>
-            <li>
-              <b>C.E.O:</b> Mr Phillip Oluwole Oladosu
-            </li>
-            <li>
-              <b>Net Worth:</b> --- ---
-            </li>
-            <li>
-              <b>About CEO:</b> born {' '} <b>1971</b> {' '} at {' '} <b>Ibadan, Nigeria</b>
-            </li>
-          </ul>
+        <div className="text-shadow-xs p-2 md:p-4 rounded-lg font-medium text-justify text-lg ">
+          <p className="text-xl md:text-2xl p-4 md:p-12">
+            Phipest bens international Nigeria limited is a leading company in construction, <b>Founded in 2013</b>{' '} by Mr Phillip Oladosu, the company has grown to become a trusted name in the industry, known for its commitment to quality and excellence. With a strong focus on innovation and customer satisfaction, Phipest bens has successfully completed numerous projects across various sectors, including residential, commercial, and infrastructure development. The company&quot;s dedication to delivering exceptional results has earned it a reputation for reliability and professionalism in the construction industry.
+          </p>
         </div>
 
         {/* Blog Link */}
         <Link
           href="/blog"
-          className="mt-6 inline-flex items-center justify-between gap-3 bg-linear-to-r from-blue-400  text-black px-4 py-2 rounded-lg shadow hover:scale-105 transform transition"
+          className="hidden mt-6  items-center justify-between gap-3 bg-linear-to-r from-blue-400  text-black px-4 py-2 rounded-lg shadow hover:scale-105 transform transition"
         >
           <span className="font-medium text-white">Visit Our Blog</span>
           <FaMicroblog />
