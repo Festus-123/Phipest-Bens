@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link";
 import { IconType } from "react-icons";
 import { FiFacebook, FiLinkedin, FiMail } from "react-icons/fi";
+import { usePathname } from "next/navigation";
 import { SiX } from "react-icons/si";
 
 export type CONTACTTYPE = {
@@ -10,6 +13,16 @@ export type CONTACTTYPE = {
 };
 
 const Footer = () => {
+  const pathname = usePathname();
+
+    const links = [
+    { name: "Home", href: "/" },
+    { name: "About_Firm", href: "/about_firm" },
+    { name: "Services", href: "/services" },
+    { name: "Projects", href: "/projects" },
+    { name: "News", href: "/news" },
+  ];
+
   const contacts: CONTACTTYPE[] = [
     {
       name: "Linkedin",
@@ -33,26 +46,26 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="relative bg-linear-to-r from-blue-500 to-blue-600 text-white p-8 lg:p-12">
+    <footer 
+      style={{
+        backgroundImage: "url('/project12.jpg')",
+      }}
+      className="relative bg-center border-t border-gray-200 mt-10">
+        {/* background overlay */}
+        <div className="bg-white absolute inset-0 opacity-80"/>
       {/* <div className="absolute inset-0 w-full h-full bg-black/60" /> */}
-      <div className="relative flex flex-row flex-wrap gap-15 md:gap-5 items-enstart justify-between mb-10 font-light text-sm">
+      <div className="relative flex flex-col md:flex-row  gap-15 md:gap-5 items-start justify-between p-4 md:p-8">
         <aside className="flex flex-col gap-3">
-          <h1 className="font- text-xl md:text-2xl">
-            PHIPEST BENS <br /> INTERNATIONAL NIGERIA LIMITED.
+          <h1 className="font- text-2xl md:text-3xl italic">
+            &quot; Your Partner In Progress &quot;
           </h1>
-          <p className="italic">&quot;Your Partner In Progress&quot;</p>
-          <p className="font-medium">Statement</p>
-          <p>
+          <p className="w-sm font-light">
             {" "}
-            Building trust through reliable multi‑sector services, <br /> shaping 
-            industries and communities worldwide.
+            Building trust through reliable multi‑sector services, Shaping the future with innovative solutions, Empowering growth through strategic partnerships, Delivering excellence in every project, Your trusted partner for success.
           </p>
-          <p>Family leadership role</p>
-          <p>Available shares </p>
-          <p>Assets holders </p>
         </aside>
-        <aside id="contact-info" className="flex flex-col gap-3">
-          <h1>Contacts Info.</h1>
+        <aside id="contact-info" className="flex flex-col gap-2 font-light">
+          <p className="text-blue-800 text-sm font-normal">-- CONTACT INFO</p>
           <p>
             located: <i>Off Ilana Street No. 3 Iworoad Ibadan, Nigeria.</i>{" "}
           </p>
@@ -62,36 +75,38 @@ const Footer = () => {
           <p>t.me/Phipest Bens Int Nig Ltd.</p>
           <p>Direct: --- --- </p>
         </aside>
-        <aside className="hidden md:flex flex-col gap-3">
-          <p>About_CEO</p>
-          <p>About_Firm</p>
-          <p>Services</p>
-          <p>Partnerships</p>
-          <p>Projects</p>
-          <p>Awards & Achivements</p>
+        <aside className={`flex flex-col gap-2 font-light ${
+          pathname 
+        }`}>
+          <p  className="text-sm text-blue-800 font-normal">-- NAVIGATE</p>
+          { links.map((item, index) => (
+            
+            <Link 
+              className={`${pathname === item.href ? "font-normal" : "font-light "}`}
+              key={index}
+              href={item.href}
+            >
+              {item.name}
+            </Link>
+          ))}
         </aside>
       </div>
 
-      <div className="relative border-t p-4 md:p-8 lg:p-12 flex flex-col items-center gap-2">
-        <p className="text-center">&copy;2013 Phipest Bens Int Nig Ltd All rigths reserved</p>
-        {/* <p>Founded by Phillip Oluwole Oladosu C.E.O-current</p> */}
-        <div className="flex items-center gap-4 underline text-xs md:text-sm">
-          <a>Terms of Service</a>
-          <a>Privacy Policy</a>
-        </div>
-      </div>
-
-      <div className="relative flex flex-row gap-2 items-center mt-10">
+      <div className="relative flex flex-row gap-2 items-center p-4 md:p-8">
         <div className="flex items-center justify-evenly w-full">
           {contacts.map((item, index) => {
             const Icon = item.icon;
             return (
               <Link key={index} href={item.to}>
-                <Icon className="text-xl md:text-2xl" />
+                <Icon className="text-lg md:text-xl font-normal" />
               </Link>
             );
           })}
         </div>
+      </div>
+
+      <div className="relative border-t border-gray-400 p-4 md:p-8 font-light flex flex-col items-center gap-2">
+        <p className="text-center">&copy;copyrights 2013 Phipest Bens Int Nig Ltd All rigths reserved</p>
       </div>
     </footer>
   );

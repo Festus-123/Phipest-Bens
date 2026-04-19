@@ -6,8 +6,12 @@ const News = () => {
           News
         </h1>
       </div>
+
+      <div className="w-full h-screen flex items-center justify-center">
+        <h1 className="text-gray-500">Page not available...</h1>
+      </div>
       {/* Main News Section */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="hidden container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-4">Latest News</h1>
         <p className="text-lg mb-6 text-gray-700">
           Stay updated with insights on government contracts, trade, and how businesses thrive globally.
@@ -34,7 +38,7 @@ const News = () => {
       </section>
 
       {/* Other News Section */}
-      <section className="container mx-auto px-4 py-12 bg-white">
+      <section className="hidden container mx-auto px-4 py-12 bg-white">
         <h2 className="text-3xl font-bold mb-4 text-gray-800">Other News</h2>
         <p className="text-lg mb-6 text-gray-600">
           Explore other resources and updates from our company and industry leaders.
@@ -61,7 +65,7 @@ const News = () => {
       </section>
 
       {/* Blogs & Articles Section */}
-      <section className="container mx-auto px-4 py-12 bg-gray-50">
+      <section className="hidden container mx-auto px-4 py-12 bg-gray-50">
         <h2 className="text-3xl font-bold mb-4">Blogs & Articles</h2>
         <p className="text-lg mb-6 text-gray-700">
           Read expert blogs and articles about contracts, business strategies, and industry insights.

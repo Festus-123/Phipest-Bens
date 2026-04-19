@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Slider from "react-slick";
+import { testimonies } from "@/data/testimonies";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -41,9 +42,7 @@ const Overview = () => {
       handlePush();
     }
   };
-  
-  console.log(number, "number");
-  
+    
   useEffect(() => {
     // Fade in for "Why Choose" items
     gsap.utils.toArray(".fade-in-section").forEach((el) => {
@@ -245,17 +244,17 @@ const Overview = () => {
           {...settings}
           className="w-full left-in slick-space rounded-lg"
         >
-          {number.map((item, index) => (
+          {testimonies.map((item, index) => (
             <div
               key={index}
-              className={` bg-linear-to-b from-blue-200 to-blue-100 p-2 md:p-4 shadow-lg rounded-lg ${item === 0 && "hidden"}`}
+              className={` bg-linear-to-b from-blue-200 to-blue-100 p-2 md:p-4 shadow-lg rounded-lg`}
             >
-              <p className="text-sm italic">
-                <span className="mr-2 font-bold inline-block text-xl md:text-3xl">
-                  {item}
+              <p className="text-sm italic tracking-wide font-normal max-h-100">
+                <span className="mr-2  inline-block text-xl md:text-7xl">
+                  &quot;
                 </span>
-                &quot;Phipest Bens transformed our project with their expertise
-                and dedication. A true partner in progress!&quot;
+                <span className="inline-block font-medium">{item.name}</span> <br />
+                &quot;{item.testimony}&quot;
               </p>
             </div>
           ))}

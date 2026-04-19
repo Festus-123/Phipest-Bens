@@ -130,12 +130,12 @@ const Hero = () => {
     <div className="relative">
       <div
         ref={bgRef}
-        style={{ backgroundImage: "url(/landing-page2.png)" }}
-        className={`sticky top-15 bg-no-repeat bg-cover bg-bottom ${poppins.className}`}
+        style={{ backgroundImage: "url(/bg3.png)" }}
+        className={`sticky top-15 bg-no-repeat bg-cover bg-center ${poppins.className}`}
       >
         <div className="absolute inset-0 w-full h-full bg-black/60" />
         {/* Hero Section */}
-        <div className="relative bg-transparent h-full flex items-center justify-center text-white p-8 md:p-12 lg:p-16">
+        <div className="relative bg-transparent h-[40vh] flex items-center justify-center text-white p-8 md:p-12 lg:p-16">
           <div className="flex flex-col gap- mb-10 md:mb-0 items-center">
             <h1 className="font-light text-center text-5xl md:text-7xl lg:text-8xl">
               <span ref={textRef}></span>

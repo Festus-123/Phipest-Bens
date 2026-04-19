@@ -25,14 +25,14 @@ const Services = () => {
         {services.map((service) => (
           <div
             key={service.id}
-            className="relative flex flex-col gap-5rounded-lg shadow-md"
+            className="relative flex flex-col gap-5 rounded-lg"
           >
             <Image
               src={service.imageUrl}
               alt={service.title}
               width={600}
               height={600}
-              className="w-full h-100 object-cover rounded-md mb-2"
+              className="w-full h-100 object-cover rounded-md "
             />
             <div
                 className="w-full h-full justify-end items-start absolute inset-0 text-white bg-black/40 flex flex-col gap-2 md:opacity-0 hover:opacity-100 transition-opacity duration-200 p-4 md:p-8 rounded-lg">
@@ -43,7 +43,7 @@ const Services = () => {
               <Link
                 href=""
                 onClick={() => handleModal(service.title)}
-                className="bg-white p-2 rounded-xl text-black"
+                className="bg-white p-2 text-black"
               >
                 Request Service
               </Link>
