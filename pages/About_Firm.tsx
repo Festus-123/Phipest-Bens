@@ -1,9 +1,7 @@
 "use client"; // for Next.js App Router
 import { useEffect, useRef } from "react";
-import { FaMicroblog } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import Image from "next/image";
-import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { poppins } from "@/pages/Landing_Page";
@@ -169,7 +167,7 @@ const About_Firm = () => {
                   alt={img.name}
                   width={200}
                   height={200}
-                  className={`object-cover object-center w-full h-auto max-h-140 md:w-60 md:h-60`}
+                  className={`object-cover object-center w-80 h-auto max-h-80 md:w-60 md:h-60`}
                 />
                 <div>
                   <h2 className="text-lg md:text-3xl mt-4 font-medium">
@@ -188,21 +186,6 @@ const About_Firm = () => {
           </div>
         </div>
 
-        <div className="text-shadow-2xs p-2 md:p-4 rounded-lg font-medium text-justify">
-          <p className="text-lg md:text-2xl p-4 md:p-12">
-            Phipest bens international Nigeria limited is a leading company in
-            construction, <b>Founded in 2013</b> by Mr Phillip Oladosu, the
-            company has grown to become a trusted name in the industry, known
-            for its commitment to quality and excellence. With a strong focus on
-            innovation and customer satisfaction, Phipest bens has successfully
-            completed numerous projects across various sectors, including
-            residential, commercial, and infrastructure development. The
-            company&quot;s dedication to delivering exceptional results has
-            earned it a reputation for reliability and professionalism in the
-            construction industry.
-          </p>
-        </div>
-
         {/* Blog Link */}
         {/* <Link
           href="/blog"
@@ -216,8 +199,11 @@ const About_Firm = () => {
       {/* Location Map */}
       <section className="fade-in-section container mx-auto px-4 py-12">
         <h2 className="text-2xl font-bold mb-4 ">Our Location</h2>
-        <p className="text-lg mb-6 text-gray-700">
+        <p className="text-lg mb-4 text-gray-700">
           Explore our company sites and offices.
+        </p>
+        <p className="text-lg mb-4 text-gray-800">
+          Location: 3rd street off ilana paga, ibadan, Ondo state.
         </p>
         <div className="rounded-lg overflow-hidden shadow-lg">
           <iframe

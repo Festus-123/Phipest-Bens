@@ -1,5 +1,5 @@
 "use client";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -7,15 +7,8 @@ import Request_Modal from "@/component/Request_Modal";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
 import Overview from "./Overview";
 
-// gsap.registerPlugin(TextPlugin);
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["100", "400", "600", "700"],
-});
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -143,26 +136,12 @@ const Hero = () => {
                 |
               </span>
             </h1>
-            {/* <p
-              ref={subtextref}
-              className="text-sm text-center tracking-widest mt-5 w-full md:w-[60%]"
-            >
-              
-            </p>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-sm md:text-base">
               <button
                 onClick={handleModal}
-                className="hero-btn cursor-pointer bg-linear-to-r from-blue-400 to-blue-500 p-2 rounded-xl mt-5 px-8 md:px-4 font-medium"
+                className="hero-btn cursor-pointer bg-linear-to-r from-blue-400 to-blue-500 p-2  mt-5 px-8 md:px-4 font-medium"
               >
                 Request a partnership
               </button>
-              <a
-                href="#contact-info"
-                className="hero-btn w-max mt-5 py-2 px-8 md:px-4 rounded-xl bg-linear-to-r from-black to-black/10  font-medium cursor-pointer"
-              >
-                Contact Info
-              </a>
-            </div> */}
           </div>
         </div>
       </div>
