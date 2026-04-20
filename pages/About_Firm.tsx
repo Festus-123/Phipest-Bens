@@ -173,7 +173,7 @@ const About_Firm = () => {
                   <h2 className="text-lg md:text-3xl mt-4 font-medium">
                     {img.name}
                   </h2>
-                  <p className="text-gray-500 text-sm md:text-base font-normal w-sm text-justify">
+                  <p className="text-gray-500 text-sm md:text-base font-normal w-full md:w-sm text-justify">
                     {img.about}
                   </p>
                 </div>
