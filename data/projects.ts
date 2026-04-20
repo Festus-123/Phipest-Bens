@@ -38,7 +38,7 @@ export const projects: PROJECTS[] = [
     id: 2,
     slug: "residential-hostel",
     name: "Residential Hostel",
-    images: ["/project2.jpg", "/project2-1.jpg"],
+    images: ["/project2.jpg", "/project2-2.jpg"],
     description:
       "A modern residential hostel designed for comfort and efficient shared living.",
     longDescription:
@@ -60,7 +60,7 @@ export const projects: PROJECTS[] = [
     id: 3,
     slug: "residential-estate",
     name: "Residential Estate",
-    images: ["/project3.jpg", "/project3-1.jpg"],
+    images: ["/project3.jpg", "/project3-3.jpg"],
     description:
       "A large-scale residential estate with modern housing and shared amenities.",
     longDescription:
@@ -82,7 +82,7 @@ export const projects: PROJECTS[] = [
     id: 4,
     slug: "campus-hostel",
     name: "Campus Hostel",
-    images: ["/project4.jpg", "/project4-1.jpg"],
+    images: ["/project4.jpg", "/project4-4.jpg"],
     description:
       "A modern campus hostel built for student comfort and convenience.",
     longDescription:
@@ -104,7 +104,7 @@ export const projects: PROJECTS[] = [
     id: 5,
     slug: "residential-building",
     name: "Residential Building",
-    images: ["/project5.jpg", "/project5-1.jpg"],
+    images: ["/project5.jpg", "/project5-5.jpg"],
     description:
       "A modern residential building with apartments and sustainable features.",
     longDescription:
@@ -126,7 +126,7 @@ export const projects: PROJECTS[] = [
     id: 6,
     slug: "family-house-construction",
     name: "Modern Family House Construction",
-    images: ["/project6.jpg", "/project6-1.jpg"],
+    images: ["/project6.jpg", "/project6-6.jpg"],
     description:
       "A modern family home with stylish design and efficient space usage.",
     longDescription:
@@ -148,7 +148,7 @@ export const projects: PROJECTS[] = [
     id: 7,
     slug: "modern-duplex-construction",
     name: "Modern Duplex Construction",
-    images: ["/project7.jpg", "/project7-1.jpg"],
+    images: ["/project7.jpg", "/project7-7.jpg"],
     description:
       "A contemporary duplex with two living units and modern design.",
     longDescription:
@@ -170,7 +170,7 @@ export const projects: PROJECTS[] = [
     id: 8,
     slug: "executive-duplex-mansion",
     name: "Executive Duplex Mansion",
-    images: ["/project8.jpg", "/project8-1.jpg"],
+    images: ["/project8.jpg", "/project8-8.jpg"],
     description:
       "A luxury duplex mansion with premium finishes and spacious design.",
     longDescription:
@@ -191,7 +191,7 @@ export const projects: PROJECTS[] = [
     id: 9,
     slug: "family-house",
     name: "Family House",
-    images: ["/project9.jpg", "/project9-1.jpg"],
+    images: ["/project9.jpg", "/project9-9.jpg"],
     description:
       "A traditional family home enhanced with modern amenities for comfortable living.",
     longDescription:
@@ -213,7 +213,7 @@ export const projects: PROJECTS[] = [
     id: 10,
     slug: "4-bedroom-family-flat",
     name: "4-Bedroom Family Flat",
-    images: ["/project10.jpg", "/project10-1.jpg"],
+    images: ["/project10.jpg", "/project10-10.jpg"],
     description:
       "A modern 4-bedroom flat with functional design and quality finishing.",
     longDescription:
@@ -235,7 +235,7 @@ export const projects: PROJECTS[] = [
     id: 11,
     slug: "family-deluxe-house",
     name: "Family Deluxe House",
-    images: ["/project11.jpg", "/project11-1.jpg"],
+    images: ["/project11.jpg", "/project11-11.jpg"],
     description:
       "A deluxe family home featuring luxury finishes and modern living spaces.",
     longDescription:
@@ -257,7 +257,7 @@ export const projects: PROJECTS[] = [
     id: 12,
     slug: "modern-goverment-hospital",
     name: "Modern Government Hospital",
-    images: ["/project12.jpg", "/project12-1.jpg"],
+    images: ["/project12.jpg", "/project12-12.jpg"],
     description:
       "A modern healthcare facility designed for efficient and patient-centered care.",
     longDescription:
@@ -279,7 +279,7 @@ export const projects: PROJECTS[] = [
     id: 13,
     slug: "car-sales-business",
     name: "Car Sales Business",
-    images: ["/project15.jpg", "/project15-1.jpg"],
+    images: ["/project15.jpg",],
     description:
       "A vehicle sales and refurbishment business focused on quality and customer satisfaction.",
     longDescription:
@@ -300,7 +300,7 @@ export const projects: PROJECTS[] = [
     id: 14,
     slug: "government-paper-contract",
     name: "Government Paper Contract",
-    images: ["/project14.jpg", "/project14-1.jpg"],
+    images: ["/project14.jpg",],
     description:
       "Procurement and supply services for government and public sector needs.",
     longDescription:
@@ -321,7 +321,7 @@ export const projects: PROJECTS[] = [
     id: 15,
     slug: "autocad-stadium-design",
     name: "Stadium AutoCAD Design",
-    images: ["/project16.jpg", "/project16-1.jpg"],
+    images: ["/project16.jpg",],
     description:
       "Architectural design and visualization of a modern stadium using AutoCAD.",
     longDescription:
@@ -342,7 +342,7 @@ export const projects: PROJECTS[] = [
     id: 16,
     slug: "drafted-building-sketches",
     name: "Drafted Building Sketches",
-    images: ["/project17.jpg", "/project17-1.jpg"],
+    images: ["/project17.jpg", ],
     description:
       "Detailed architectural drafting for residential and commercial projects.",
     longDescription:

@@ -52,7 +52,7 @@ const Footer = () => {
       {/* <div className="absolute inset-0 w-full h-full bg-black/60" /> */}
       <div className="relative flex flex-col md:flex-row  gap-10 items-start justify-between p-4 md:p-8">
         <aside className="flex flex-col gap-3">
-        <h1 className="font- text-xl md:text-3xl">Phipest-bens international nigeria limited</h1>
+        <h1 className="font- text-xl md:text-3xl text-blue-800">Phipest-bens International Nigeria Limited</h1>
           <h1 className="font- text-2xl md:text-3xl italic">
             &quot; Your Partner In Progress &quot;
           </h1>

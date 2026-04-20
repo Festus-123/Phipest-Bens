@@ -1,4 +1,3 @@
-"use client"
 
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +5,7 @@ import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -22,16 +21,16 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     notFound();
   }
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-  };
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  //   arrows: false,
+  // };
 
   return (
     <div className="bg-black/90">
@@ -44,10 +43,9 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         </Link>
       </div>
 
-      <section className="flex flex-col gap-4 p-o md:p-4">
+      <section className="flex flex-col gap-4 p-2 md:p-4">
         {/* 🔥 SLIDER START */}
-        <div className="w-full">
-          <Slider {...settings}>
+        <div className="w-full flex flex-col gap-10">
             {project.images.map((img, i) => (
               <div key={i}>
                 <Image
@@ -55,11 +53,10 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
                   alt={`${project.name} ${i}`}
                   width={1200}
                   height={600}
-                  className="w-full h-140 md:h-screen object-cover md:rounded-xl"
+                  className="w-full h-140 md:h-screen object-cover rounded-xl"
                 />
               </div>
             ))}
-          </Slider>
         </div>
         {/* 🔥 SLIDER END */}
 

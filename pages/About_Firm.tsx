@@ -1,6 +1,7 @@
 "use client"; // for Next.js App Router
 import { useEffect, useRef } from "react";
 import { FaMicroblog } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
@@ -143,21 +144,6 @@ const About_Firm = () => {
             </p>
           </div>
         </div>
-
-        {/* Present Section */}
-        {/* <div className="flex flex-col lg:flex-row-reverse gap-10 md:gap-20 items-center">
-          <div className="w-full lg:w-auto p-1 md:p-4 shadow-xl rounded-lg">
-            <Image
-              src="/about_firm.png"
-              alt="Company operations illustration"
-              width={1200}
-              height={400}
-              className="w-full h-auto object-cover rounded-lg"
-            />
-          </div>
-
-
-        </div> */}
       </section>
 
       {/* Governing bodies */}
@@ -194,25 +180,37 @@ const About_Firm = () => {
                   </p>
                 </div>
                 <p className="uppercase">{img.title}</p>
+                <div className="text-2xl hover:scale-110 cursor-pointer">
+                  <FiArrowUpRight />
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="text-shadow-xs p-2 md:p-4 rounded-lg font-medium text-justify text-lg ">
-          <p className="text-xl md:text-2xl p-4 md:p-12">
-            Phipest bens international Nigeria limited is a leading company in construction, <b>Founded in 2013</b>{' '} by Mr Phillip Oladosu, the company has grown to become a trusted name in the industry, known for its commitment to quality and excellence. With a strong focus on innovation and customer satisfaction, Phipest bens has successfully completed numerous projects across various sectors, including residential, commercial, and infrastructure development. The company&quot;s dedication to delivering exceptional results has earned it a reputation for reliability and professionalism in the construction industry.
+        <div className="text-shadow-2xs p-2 md:p-4 rounded-lg font-medium text-justify">
+          <p className="text-lg md:text-2xl p-4 md:p-12">
+            Phipest bens international Nigeria limited is a leading company in
+            construction, <b>Founded in 2013</b> by Mr Phillip Oladosu, the
+            company has grown to become a trusted name in the industry, known
+            for its commitment to quality and excellence. With a strong focus on
+            innovation and customer satisfaction, Phipest bens has successfully
+            completed numerous projects across various sectors, including
+            residential, commercial, and infrastructure development. The
+            company&quot;s dedication to delivering exceptional results has
+            earned it a reputation for reliability and professionalism in the
+            construction industry.
           </p>
         </div>
 
         {/* Blog Link */}
-        <Link
+        {/* <Link
           href="/blog"
           className="hidden mt-6  items-center justify-between gap-3 bg-linear-to-r from-blue-400  text-black px-4 py-2 rounded-lg shadow hover:scale-105 transform transition"
         >
           <span className="font-medium text-white">Visit Our Blog</span>
           <FaMicroblog />
-        </Link>
+        </Link> */}
       </section>
 
       {/* Location Map */}
